@@ -1,0 +1,12 @@
+# Melodic house thread, 2026-11-15: Arthur додав і лайкнув Todd Terje & Bryan Ferry «Johnny and Mary». Space disco як гілка поруч із melodic house.
+{"op":"entity","id":"genre:space-disco","type":"genre","name":"Space Disco","country":"NO","years":{"from":2003,"approx":true},"summary":"Норвезьке переосмислення диско 70-х: повільний темп, довгі аналогові синти, космічні арпеджіо. Lindstrøm, Prins Thomas, Todd Terje.","confidence":"likely","author":"claude","attrs":{"genres":["genre:electronic"]}}
+{"op":"entity","id":"artist:todd-terje","type":"artist","name":"Todd Terje","country":"NO","years":{"from":2004},"summary":"Осло. Ім'я — жарт на честь Todd Rundgren. Inspector Norse (2012) став гімном; It's Album Time (2014) має кавер Johnny and Mary з Bryan Ferry.","confidence":"established","author":"claude"}
+{"op":"entity","id":"artist:lindstrom","type":"artist","name":"Lindstrøm","country":"NO","years":{"from":2003},"summary":"Hans-Peter Lindstrøm, один із творців space disco; лейбл Feedelity. I Feel Space (2005).","confidence":"established","author":"claude"}
+{"op":"entity","id":"artist:bryan-ferry","type":"artist","name":"Bryan Ferry","country":"GB","years":{"from":1971},"summary":"Голос Roxy Music, британський крунер. Часто запрошений вокаліст в електроніці: Groove Armada, Todd Terje.","confidence":"established","author":"claude"}
+{"op":"entity","id":"artist:roxy-music","type":"artist","name":"Roxy Music","country":"GB","years":{"from":1971,"to":1983},"summary":"Арт-рок гурт Bryan Ferry і Brian Eno; Avalon (1982) — гладкий, атмосферний фінал.","confidence":"established","author":"claude"}
+{"op":"relation","type":"member_of","from":"artist:bryan-ferry","to":"artist:roxy-music","why":"Вокаліст і лідер."}
+{"op":"relation","type":"member_of","from":"artist:brian-eno","to":"artist:roxy-music","why":"Синтезатори й обробки на перших двох альбомах."}
+{"op":"relation","type":"in_genre","from":"artist:todd-terje","to":"genre:space-disco","why":"Один із головних артистів жанру."}
+{"op":"relation","type":"in_genre","from":"artist:lindstrom","to":"genre:space-disco","why":"Один із творців жанру."}
+{"op":"relation","type":"collaborated","from":"artist:todd-terje","to":"artist:bryan-ferry","why":"Johnny and Mary (2014), кавер Robert Palmer."}
+{"op":"relation","type":"influenced","from":"genre:space-disco","to":"genre:house","why":"Повільний мелодійний грув норвезького диско живить melodic і balearic house.","confidence":"speculative"}

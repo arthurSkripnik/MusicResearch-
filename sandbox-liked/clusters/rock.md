@@ -1,0 +1,41 @@
+# ★ Рок: контекст лайків Arthur
+
+Знімок Liked Songs від 2026-11-07, 31 треків. Плейлист: https://open.spotify.com/playlist/0IuyjCcs6fWRJmOOCUD3SL
+
+Це те, що Arthur уже слухав і лайкнув. Не рекомендуй ці треки повторно, починай глибше від них.
+
+## Головні артисти (кількість лайків)
+Nirvana (2), Beck (2), Marilyn Manson (2), Deftones (2), Jefferson Airplane (1), Black Sabbath (1), The Who (1), Lou Reed (1), Bob Dylan (1), Pink Floyd (1)
+
+## Треки (рік релізу · дата лайку)
+- 1967 · 2024-04 · Jefferson Airplane — Somebody to Love (Surrealistic Pillow)
+- 1970 · 2025-08 · Black Sabbath — Paranoid - 2009 Remaster (Paranoid)
+- 1971 · 2026-09 · The Who — Behind Blue Eyes (Who's Next (Deluxe Edition))
+- 1972 · 2024-07 · Lou Reed — Walk On the Wild Side (Transformer)
+- 1973 · 2024-09 · Bob Dylan — Knockin' On Heaven's Door (Pat Garrett & Billy The Kid (Soundtrack From The Motion Picture))
+- 1975 · 2026-10 · Pink Floyd — Shine On You Crazy Diamond (Pts. 1-5) (Wish You Were Here)
+- 1977 · 2023-06 · Brian Eno — By This River - 2004 Digital Remaster (Before And After Science)
+- 1985 · 2025-12 · Dire Straits — Brothers In Arms - Remastered 1996 (Brothers In Arms (Remastered 1996))
+- 1988 · 2026-10 · Danzig — Mother (Danzig)
+- 1990 · 2025-09 · Scorpions — Wind Of Change (Crazy World)
+- 1991 · 2025-10 · Ozzy Osbourne — No More Tears (No More Tears (Expanded Edition))
+- 1991 · 2025-06 · Nirvana — Something In The Way (Nevermind (Remastered))
+- 1994 · 2025-04 · Beck — Loser (Mellow Gold)
+- 1994 · 2025-07 · Nirvana — The Man Who Sold The World - Live (MTV Unplugged In New York)
+- 1995 · 2025-06 · The Smashing Pumpkins — 1979 - Remastered 2012 (Mellon Collie And The Infinite Sadness (Deluxe Edition))
+- 1995 · 2025-05 · Marilyn Manson — Sweet Dreams (Are Made Of This) (Smells Like Children)
+- 1997 · 2024-09 · Tito & Tarantula — After Dark - 2015 Remaster (Tarantism (2015 Remaster))
+- 1997 · 2026-09 · Deftones — My Own Summer (Shove It) (Around the Fur)
+- 2000 · 2026-09 · Deftones — Change (In the House of Flies) (White Pony)
+- 2001 · 2025-08 · Rammstein — Sonne (Mutter)
+- 2001 · 2025-08 · System Of A Down — Aerials (Toxicity)
+- 2002 · 2025-06 · Audioslave — Like a Stone (Audioslave)
+- 2002 · 2025-06 · PAIN — Shut Your Mouth (Nothing Remains The Same)
+- 2003 · 2026-09 · Static-X — The Only (Shadow Zone)
+- 2006 · 2025-09 · The Raconteurs — Steady, As She Goes (Broken Boy Soldiers)
+- 2007 · 2024-10 · Eddie Vedder — Society (Into The Wild (Music For The Motion Picture))
+- 2015 · 2025-05 · Marilyn Manson — Killing Strangers (The Pale Emperor)
+- 2016 · 2026-11 · David Bowie — Lazarus (Blackstar)
+- 2019 · 2024-09 · The Animals — The House of the Rising Sun (The House of the Rising Sun: Best of The Animals)
+- 2022 · 2025-02 · The Goo Goo Dolls — Iris (100 Greatest Driving Songs)
+- 2026 · 2026-11 · Beck — Everybody's Gotta Learn Sometime (Everybody's Gotta Learn Sometime)

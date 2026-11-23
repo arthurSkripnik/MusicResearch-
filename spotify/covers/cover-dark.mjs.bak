@@ -1,0 +1,63 @@
+#!/usr/bin/env node
+// Playlist cover in the Music Explorer map style.
+//   node cover.mjs covers/<spec>.json covers/<out>.jpg
+// Spec: { "title": "Explorer · …", "center": "trip-hop",
+//         "groups": [ { "node": "downtempo", "kind": "genre|scene|label", "artists": ["Nightmares on Wax"] } ],
+//         "links": [["drum & bass","Bristol"]]   // optional extra dashed links between group nodes
+//       }
+// Keep it to 3–6 groups: the cover is shown small, the shape matters more than the labels.
+import fs from 'node:fs';
+import path from 'node:path';
+import { createRequire } from 'node:module';
+const require = createRequire(import.meta.url);
+const { chromium } = require('playwright');
+
+const [specPath, outPath] = process.argv.slice(2);
+const spec = JSON.parse(fs.readFileSync(specPath, 'utf8'));
+const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
+const W = 640, cx = 320, cy = 300;
+const col = { genre: '#b4574a', scene: '#c9a46a', label: '#6f93b3' };
+const n = spec.groups.length;
+const pos = {};
+let edges = '', nodes = '', outer = '', labels = '';
+spec.groups.forEach((g, i) => {
+  const a = -Math.PI / 2 - Math.PI / n + (i * 2 * Math.PI) / n;
+  const r = 185, x = cx + r * Math.cos(a), y = cy + r * Math.sin(a);
+  pos[g.node] = { x, y };
+  const c = col[g.kind ?? 'genre'];
+  const rad = Math.max(34, Math.min(54, 8 + g.node.length * 4.9));
+  edges += `<path d="M${cx} ${cy} Q${(cx + x) / 2 + 30 * Math.sin(a)} ${(cy + y) / 2 - 30 * Math.cos(a)} ${x} ${y}" stroke="${col.genre}" stroke-opacity=".55" stroke-width="2" fill="none"/>`;
+  const dash = g.kind === 'scene' ? ' stroke-dasharray="4 4"' : '';
+  nodes += `<circle cx="${x}" cy="${y}" r="${rad}" fill="#161412" stroke="${c}" stroke-width="1.6"${dash}/><circle cx="${x}" cy="${y}" r="${rad}" fill="${c}" fill-opacity=".2"/>` +
+    `<text x="${x}" y="${y + 6}" font-family="Fraunces" font-weight="600" font-size="${Math.min(19, Math.floor((rad * 2 - 6) / (g.node.length * 0.5)))}" fill="#ece6dc" text-anchor="middle"${g.kind === 'scene' ? ' font-style="italic"' : ''}>${esc(g.node)}</text>`;
+  (g.artists ?? []).slice(0, 3).forEach((ar, j, arr) => {
+    const spread = (j - (arr.length - 1) / 2) * 0.32;
+    const ax = cx + 268 * Math.cos(a + spread), ay = cy + 268 * Math.sin(a + spread);
+    const ex = x + (rad) * Math.cos(Math.atan2(ay - y, ax - x)), ey = y + rad * Math.sin(Math.atan2(ay - y, ax - x));
+    outer += `<line x1="${ex}" y1="${ey}" x2="${ax}" y2="${ay}" stroke="#ece6dc" stroke-opacity=".28" stroke-width="1.2"/><circle cx="${ax}" cy="${ay}" r="7" fill="#e8a13a"/>`;
+    // label beside the dot, on the outer side, so neighbours never overlap; fall back to above/below near the edges
+    const tw = ar.length * 8.4, side = ax < cx - 30 ? -1 : ax > cx + 30 ? 1 : 0;
+    let tx, ty, anchor;
+    if (side === -1 && ax - 12 - tw >= 8) { tx = ax - 12; ty = ay + 5; anchor = 'end'; }
+    else if (side === 1 && ax + 12 + tw <= W - 8) { tx = ax + 12; ty = ay + 5; anchor = 'start'; }
+    else { tx = Math.min(W - 8 - tw / 2, Math.max(8 + tw / 2, ax)); ty = ay + (ay > cy ? 26 : -16); anchor = 'middle'; }
+    labels += `<text x="${tx}" y="${ty}" font-family="IBM Plex Sans" font-size="15" fill="#d9c4a0" text-anchor="${anchor}">${esc(ar)}</text>`;
+  });
+});
+for (const [a, b] of spec.links ?? []) if (pos[a] && pos[b])
+  edges += `<line x1="${pos[a].x}" y1="${pos[a].y}" x2="${pos[b].x}" y2="${pos[b].y}" stroke="#c9a46a" stroke-opacity=".45" stroke-dasharray="4 5" stroke-width="1.4"/>`;
+const cr = Math.max(56, Math.min(80, 14 + spec.center.length * 8));
+const svg = `<svg width="640" height="640" viewBox="0 0 640 640" xmlns="http://www.w3.org/2000/svg">
+<defs><radialGradient id="g" cx="50%" cy="45%" r="62%"><stop offset="0" stop-color="#211c17"/><stop offset="1" stop-color="#12110f"/></radialGradient></defs>
+<rect width="640" height="640" fill="url(#g)"/>${edges}${outer}
+<circle cx="${cx}" cy="${cy}" r="${cr}" fill="#161412" stroke="#b4574a" stroke-width="2"/><circle cx="${cx}" cy="${cy}" r="${cr}" fill="#b4574a" fill-opacity=".25"/>
+<text x="${cx}" y="${cy + 10}" font-family="Fraunces" font-weight="600" font-size="${Math.min(30, Math.floor((cr * 2 - 12) / (spec.center.length * 0.5)))}" fill="#ece6dc" text-anchor="middle">${esc(spec.center)}</text>
+${nodes}${labels}
+<text x="32" y="614" font-family="IBM Plex Mono" font-size="13" fill="#8f877b" letter-spacing="1.5">${esc(spec.title.toUpperCase())}</text></svg>`;
+const html = `<!doctype html><meta charset="utf-8"><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=IBM+Plex+Sans&family=IBM+Plex+Mono&display=swap" rel="stylesheet"><style>body{margin:0}</style>${svg}`;
+const b = await chromium.launch(); const p = await b.newPage({ viewport: { width: 640, height: 640 } });
+await p.setContent(html); await p.waitForLoadState('networkidle').catch(() => {}); await p.waitForTimeout(600);
+let q = 88; let buf;
+do { buf = await p.screenshot({ type: 'jpeg', quality: q }); q -= 8; } while (buf.length > 190000 && q > 40); // base64 must stay ≤256 KB
+fs.writeFileSync(outPath, buf); await b.close();
+console.log(`cover ${path.basename(outPath)} ${buf.length} bytes`);

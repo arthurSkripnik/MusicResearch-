@@ -1,0 +1,13 @@
+{
+  "title": "Explorer · Latin, Brazil & Africa",
+  "center": "Africa ↔ Brazil",
+  "groups": [
+    { "node": "Mali", "artists": ["Ali Farka Touré", "Tinariwen"] },
+    { "node": "samba", "artists": ["Baden Powell", "Jorge Ben Jor"] },
+    { "node": "Bahia", "kind": "scene", "artists": ["Dorival Caymmi", "João Gilberto"] },
+    { "node": "Minas", "kind": "scene", "artists": ["Milton Nascimento"] },
+    { "node": "Rio funk", "kind": "scene", "artists": ["Fernanda Abreu", "Tim Maia", "Banda Black Rio"] }
+  ],
+  "links": [["samba", "Bahia"], ["Bahia", "Minas"], ["samba", "Rio funk"]],
+  "hue": 60
+}

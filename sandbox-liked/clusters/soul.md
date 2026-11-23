@@ -1,0 +1,40 @@
+# ★ Soul & Neo-Soul: контекст лайків Arthur
+
+Знімок Liked Songs від 2026-11-07, 30 треків. Плейлист: https://open.spotify.com/playlist/1NGvuiupVkEOnHCxS3UepR
+
+Це те, що Arthur уже слухав і лайкнув. Не рекомендуй ці треки повторно, починай глибше від них.
+
+## Головні артисти (кількість лайків)
+JMSN (7), Meshell Ndegeocello (4), Erykah Badu (2), The Weeknd (2), Bill Withers (1), War (1), The Isley Brothers (1), Sister Nancy (1), Prince (1), Harold Melvin & The Blue Notes (1)
+
+## Треки (рік релізу · дата лайку)
+- 1971 · 2024-07 · Bill Withers — Ain't No Sunshine (Just As I Am)
+- 1975 · 2023-11 · War — Low Rider (Why Can't We Be Friends?)
+- 1977 · 2024-08 · The Isley Brothers — Footsteps in the Dark, Pts. 1 & 2 (Go for Your Guns)
+- 1982 · 2024-07 · Sister Nancy — Bam Bam (One Two)
+- 1986 · 2024-07 · Prince — Kiss (Parade - Music from the Motion Picture Under the Cherry Moon)
+- 1996 · 2026-09 · Meshell Ndegeocello — Who Is He and What Is He to You (Peace Beyond Passion)
+- 1997 · 2026-11 · Erykah Badu — Next Lifetime (Baduizm)
+- 1999 · 2023-09 · Harold Melvin & The Blue Notes, Teddy Pendergrass — Wake up Everybody (feat. Teddy Pendergrass) (R&B: From Doo-Wop To Hip-Hop)
+- 2000 · 2026-11 · Erykah Badu, Stephen Marley — In Love With You (Mama's Gun)
+- 2002 · 2026-11 · Bob Marley & The Wailers — Natural Mystic (Natural Mystic)
+- 2006 · 2023-09 · Amy Winehouse — You Know I'm No Good (Back To Black (Deluxe Edition))
+- 2010 · 2024-09 · Aloe Blacc — I Need a Dollar (Good Things)
+- 2012 · 2026-10 · JMSN — Love & Pain (Priscilla)
+- 2012 · 2026-10 · JMSN — Jameson (Priscilla)
+- 2015 · 2025-03 · The Weeknd — The Hills (Beauty Behind The Madness)
+- 2016 · 2026-10 · The Weeknd, Lana Del Rey — Stargirl Interlude (Starboy)
+- 2018 · 2021-05 · Nathaniel Rateliff & The Night Sweats — You Worry Me (Tearing At The Seams)
+- 2018 · 2026-09 · Meshell Ndegeocello — I Wonder If I Take You Home (Ventriloquism)
+- 2018 · 2025-10 · JMSN — Talk Is Cheap (Velvet)
+- 2019 · 2024-08 · Black Pumas — Colors (Black Pumas)
+- 2023 · 2024-07 · William Bell — I Forgot To Be Your Lover (The Man In The Street: The Complete Yellow Stax Solo Singles (1968-1974))
+- 2023 · 2026-10 · JMSN — Outsider (Soft Spot)
+- 2023 · 2026-10 · JMSN — Not 4 U (Soft Spot)
+- 2023 · 2026-10 · JMSN — 2 High (Soft Spot)
+- 2024 · 2026-09 · Molly Lewis, Thee Sacred Souls — Crushed Velvet (On The Lips)
+- 2025 · 2025-09 · Blood Orange, Tariq Al-Sabir, Caroline Polachek, Daniel Caesar, The Durutti Column — The Field (feat. The Durutti Column, Tariq Al-Sabir, Caroline Polachek & Daniel Caesar) (Essex Honey)
+- 2025 · 2025-10 · JMSN — Click Bait (...it's only about u if you think it is.)
+- 2026 · 2026-09 · Meshell Ndegeocello, Lianne La Havas — Don’t Look Any Further (with Lianne La Havas) (With God On Our Side)
+- 2026 · 2026-11 · Horace Andy — You Are My Angel (A Serious Thing)
+- 2026 · 2026-10 · Meshell Ndegeocello, Cat Power — Don’t You Want Me (with Cat Power) (Synonym)

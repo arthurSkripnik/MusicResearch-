@@ -1,0 +1,112 @@
+{
+ "snapshot": "2026-11-07",
+ "last_sorted_like": "2026-11-06T21:46:42Z",
+ "rule": "Each new Liked Song goes into exactly one ★ playlist by best-fit genre; skip duplicates (same artist+title already there).",
+ "playlists": {
+  "trip": {
+   "id": "0YnlyM8HBm5br3W1kSZmuV",
+   "name": "★ Trip-Hop & Downtempo",
+   "url": "https://open.spotify.com/playlist/0YnlyM8HBm5br3W1kSZmuV",
+   "about": "Від Unfinished Sympathy до UNKLE Rōnin: Бристоль, Mo' Wax, темні Recoil і Archive, даб від Mad Professor.",
+   "context_file": "clusters/trip.md"
+  },
+  "house": {
+   "id": "195WCfev8blbIxi6qckeZx",
+   "name": "★ Melodic House",
+   "url": "https://open.spotify.com/playlist/195WCfev8blbIxi6qckeZx",
+   "about": "WhoMadeWho, Adriatique, Keinemusik, Afterlife: мелодійний хаус і органік-хаус.",
+   "context_file": "clusters/house.md"
+  },
+  "post": {
+   "id": "6TEeiUsKPp31paP4YcF5Rx",
+   "name": "★ Post-Punk & New Wave",
+   "url": "https://open.spotify.com/playlist/6TEeiUsKPp31paP4YcF5Rx",
+   "about": "The Cure, Joy Division, Depeche Mode, Nick Cave, Fontaines D.C. і холодна мінімал-хвиля.",
+   "context_file": "clusters/post.md"
+  },
+  "rh": {
+   "id": "3Lje3YEdPnMlwweTOcBtPJ",
+   "name": "★ Radiohead",
+   "url": "https://open.spotify.com/playlist/3Lje3YEdPnMlwweTOcBtPJ",
+   "about": "Radiohead, Thom Yorke і ремікси TKOL RMX.",
+   "context_file": "clusters/rh.md"
+  },
+  "hh90": {
+   "id": "3ImaFfI4YeumWkTgyROwhh",
+   "name": "★ Хіп-хоп 90-х",
+   "url": "https://open.spotify.com/playlist/3ImaFfI4YeumWkTgyROwhh",
+   "about": "Golden age, jazz rap, West Coast, Memphis і Nujabes.",
+   "context_file": "clusters/hh90.md"
+  },
+  "hhnew": {
+   "id": "3B18tKNYsyXou5sQ7p8MlW",
+   "name": "★ Сучасний хіп-хоп",
+   "url": "https://open.spotify.com/playlist/3B18tKNYsyXou5sQ7p8MlW",
+   "about": "Kendrick, Kanye, Vince Staples, британська хвиля і глобальний реп.",
+   "context_file": "clusters/hhnew.md"
+  },
+  "elec": {
+   "id": "1FyElQX8Fhr3r1z8fHnrCB",
+   "name": "★ Електроніка",
+   "url": "https://open.spotify.com/playlist/1FyElQX8Fhr3r1z8fHnrCB",
+   "about": "Moderat, Burial, Four Tet, Boards of Canada, Fred again.., big beat і ранній хаус.",
+   "context_file": "clusters/elec.md"
+  },
+  "jazz": {
+   "id": "6mlpylTHjy37dtXIG1whQw",
+   "name": "★ Jazz & Jazz-Funk",
+   "url": "https://open.spotify.com/playlist/6mlpylTHjy37dtXIG1whQw",
+   "about": "Bill Evans, Roy Ayers, Grover Washington Jr., city pop і нова джазова сцена.",
+   "context_file": "clusters/jazz.md"
+  },
+  "soul": {
+   "id": "1NGvuiupVkEOnHCxS3UepR",
+   "name": "★ Soul & Neo-Soul",
+   "url": "https://open.spotify.com/playlist/1NGvuiupVkEOnHCxS3UepR",
+   "about": "Класичний соул, neo-soul (Badu, Meshell, JMSN), реґі і ретро-соул.",
+   "context_file": "clusters/soul.md"
+  },
+  "world": {
+   "id": "5fWyugQpZUJI2a1kaH50Ij",
+   "name": "★ Латина, Бразилія, Африка",
+   "url": "https://open.spotify.com/playlist/5fWyugQpZUJI2a1kaH50Ij",
+   "about": "Bossa nova, кубинський сон, Cesária Evora, афро-фанк, baile funk, шансон.",
+   "context_file": "clusters/world.md"
+  },
+  "rock": {
+   "id": "0IuyjCcs6fWRJmOOCUD3SL",
+   "name": "★ Рок",
+   "url": "https://open.spotify.com/playlist/0IuyjCcs6fWRJmOOCUD3SL",
+   "about": "Класичний рок 60–70-х, гранж, альтернатива і ню-метал.",
+   "context_file": "clusters/rock.md"
+  },
+  "indie": {
+   "id": "5JdVjeyWA7TvKEsvzk7uje",
+   "name": "★ Інді & арт-поп",
+   "url": "https://open.spotify.com/playlist/5JdVjeyWA7TvKEsvzk7uje",
+   "about": "Dream pop, Björk, FKA twigs, Tame Impala, а також корені фолку й блюзу.",
+   "context_file": "clusters/indie.md"
+  },
+  "pop": {
+   "id": "1OtztvDRzyDizN962yiqML",
+   "name": "★ Поп-класика",
+   "url": "https://open.spotify.com/playlist/1OtztvDRzyDizN962yiqML",
+   "about": "Поп і диско-хіти 60-х–2010-х.",
+   "context_file": "clusters/pop.md"
+  },
+  "ua": {
+   "id": "7sCMT4o2Mn0UeJrOo8XlXF",
+   "name": "★ Українське",
+   "url": "https://open.spotify.com/playlist/7sCMT4o2Mn0UeJrOo8XlXF",
+   "about": "Народне й естрада, Скрябін, Океан Ельзи і нова сцена: ONUKA, Jamala, LATEXFAUNA.",
+   "context_file": "clusters/ua.md"
+  },
+  "ru": {
+   "id": "3MGMqDYD2blLaZpthRd71v",
+   "name": "★ Пострадянське",
+   "url": "https://open.spotify.com/playlist/3MGMqDYD2blLaZpthRd71v",
+   "about": "Рок 80–90-х (Наутилус, Сміслові Галюцинації), естрада і реп.",
+   "context_file": "clusters/ru.md"
+  }
+ }
+}

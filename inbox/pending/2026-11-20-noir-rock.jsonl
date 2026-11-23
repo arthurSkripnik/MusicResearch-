@@ -1,0 +1,4 @@
+# Thread "Explore noir rock", 2026-11-20: Arthur put Tom Waits — Lie To Me into «🔍 Розібрати» (break it down).
+{"op":"entity","id":"release:orphans","type":"release","name":"Orphans: Brawlers, Bawlers & Bastards","years":{"from":2006},"summary":"Потрійний збірник Tom Waits: 54 пісні, близько половини нові, решта — раритети й саундтреки. Три диски: рок-н-рол і блюз (Brawlers), балади (Bawlers), декламація й експерименти (Bastards). Перевидано 2026.","attrs":{"artist":"artist:tom-waits","releaseType":"compilation"}}
+{"op":"entity","id":"track:lie-to-me","type":"track","name":"Lie To Me","attrs":{"artist":"artist:tom-waits","release":"release:orphans"}}
+{"op":"note","id":"note-2026-11-20-noir-rock-lie-to-me","date":"2026-11-20","source":"🔍 Розібрати: Tom Waits — Lie To Me (Orphans: Brawlers, 2026)","reactions":[],"statuses":{}}

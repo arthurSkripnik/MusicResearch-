@@ -1,0 +1,7 @@
+[
+{"id":"event:second-summer-of-love","type":"event","name":"Second Summer of Love","years":{"from":1988,"to":1989},"summary":"Літо 1988–89: acid house і екстазі перетворюють британські клуби на масові rave.","confidence":"established","author":"claude","country":"GB"},
+{"id":"event:cja-1994","type":"event","name":"Criminal Justice Act","years":{"from":1994},"summary":"Закон, який дав поліції повноваження розганяти зібрання під музику з «повторюваними бітами». Знак кінця вільних rave.","confidence":"established","author":"claude","country":"GB"},
+{"id":"event:mercury-1995","type":"event","name":"Mercury Prize 1995","years":{"from":1995},"summary":"Portishead отримують Mercury Prize за Dummy — trip-hop стає визнаним мейнстримом.","confidence":"established","author":"claude","country":"GB"},
+{"id":"event:mercury-1997","type":"event","name":"Mercury Prize 1997","years":{"from":1997},"summary":"Roni Size / Reprazent отримують Mercury Prize за New Forms — drum & bass визнано як серйозну альбомну музику.","confidence":"established","author":"claude","country":"GB"},
+{"id":"event:grammy-1998","type":"event","name":"Grammy Awards 1998","years":{"from":1998},"summary":"Baduizm отримує Grammy за найкращий R&B-альбом, «On & On» — за найкраще жіноче R&B-виконання.","confidence":"established","author":"claude","country":"US"}
+]

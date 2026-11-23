@@ -1,0 +1,19 @@
+# Thread "Explore noir rock" (started 2026-11-12). Batch 1 = recommended only, not Arthur's picks.
+{"op":"entity","id":"genre:noir-rock","type":"genre","name":"Noir rock","summary":"Не жанр, а настрій: низький голос, повільний темп, бас, сакс або орган, нічне місто. Від Tom Waits 80-х до Chromatics; міст між джазом і роком.","attrs":{"genres":["genre:rock","genre:jazz"]}}
+{"op":"relation","type":"influenced","from":"genre:jazz","to":"genre:noir-rock","why":"Сакс, щітки, контрабас і вільний темп джазового тріо, перенесені в рок (Morphine, Bohren, Tom Waits)."}
+{"op":"relation","type":"in_genre","from":"artist:morphine","to":"genre:noir-rock","why":"«Low rock»: баритон-сакс і слайд-бас замість гітари."}
+{"op":"relation","type":"in_genre","from":"artist:nick-cave","to":"genre:noir-rock","why":"Murder ballads і Red Right Hand: хрестоматія нуару."}
+{"op":"entity","id":"artist:bohren-und-der-club-of-gore","type":"artist","name":"Bohren & der Club of Gore","country":"DE","years":{"from":1992},"summary":"Німецький «doom jazz»: дуже повільні сакс, Fender Rhodes, контрабас і щітки. Колишні хардкор-музиканти, що зіграли нуар у темпі ледь живого серця."}
+{"op":"entity","id":"artist:angelo-badalamenti","type":"artist","name":"Angelo Badalamenti","country":"US","years":{"from":1960,"to":2022},"summary":"Композитор David Lynch: Twin Peaks, Blue Velvet, Mulholland Drive. Його кул-джаз і синт-струнні задали звук кінонуару 90-х."}
+{"op":"entity","id":"artist:tom-waits","type":"artist","name":"Tom Waits","country":"US","years":{"from":1973},"summary":"Хриплий бард нічного міста: від джазових фортепіанних балад 70-х (Small Change) до звалищного кабаре Rain Dogs (1985) з гітарою Marc Ribot."}
+{"op":"entity","id":"artist:tindersticks","type":"artist","name":"Tindersticks","country":"GB","years":{"from":1991},"summary":"Ноттінгемський оркестровий нуар: баритон Stuart Staples, струнні, повільні балади. Писали саундтреки для Claire Denis."}
+{"op":"entity","id":"artist:mark-lanegan","type":"artist","name":"Mark Lanegan","country":"US","years":{"from":1984,"to":2022},"summary":"Голос Screaming Trees і Queens of the Stone Age; сольно — найнижчий, найпрокуреніший нуар-блюз 90–2000-х."}
+{"op":"entity","id":"artist:chromatics","type":"artist","name":"Chromatics","country":"US","years":{"from":2001},"summary":"Портлендський синт-нуар Johnny Jewel (Italians Do It Better); грали в Roadhouse у Twin Peaks 2017."}
+{"op":"relation","type":"in_genre","from":"artist:bohren-und-der-club-of-gore","to":"genre:noir-rock","why":"Doom jazz: крайній, найджазовіший край нуару."}
+{"op":"relation","type":"in_genre","from":"artist:angelo-badalamenti","to":"genre:noir-rock","why":"Кінематографічне джерело нуарного звуку."}
+{"op":"relation","type":"in_genre","from":"artist:tom-waits","to":"genre:noir-rock","why":"Нічне кабаре, хриплий голос, джазове коріння."}
+{"op":"relation","type":"in_genre","from":"artist:tindersticks","to":"genre:noir-rock","why":"Оркестровий баритон-нуар."}
+{"op":"relation","type":"in_genre","from":"artist:mark-lanegan","to":"genre:noir-rock","why":"Низький голос, повільний блюз."}
+{"op":"relation","type":"in_genre","from":"artist:chromatics","to":"genre:noir-rock","why":"Синт-нуар, сучасна гілка через Twin Peaks."}
+{"op":"relation","type":"influenced","from":"artist:angelo-badalamenti","to":"artist:bohren-und-der-club-of-gore","why":"Bohren прямо посилаються на саундтреки Lynch/Badalamenti як на джерело свого повільного звуку."}
+{"op":"note","id":"note-2026-11-12-noir-rock-start","date":"2026-11-12","source":"«Не думав що морфін ляже сюди» … «Давай» … «Я взагалі сприймав то як джаз»","reactions":[],"statuses":{}}

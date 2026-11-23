@@ -1,0 +1,47 @@
+{
+  "title": "Explorer · Jazz",
+  "center": "jazz",
+  "groups": [
+    {
+      "node": "modal",
+      "artists": [
+        "Miles Davis"
+      ]
+    },
+    {
+      "node": "piano trio",
+      "artists": [
+        "Bill Evans",
+        "Brad Mehldau"
+      ]
+    },
+    {
+      "node": "ECM",
+      "kind": "label",
+      "artists": [
+        "Keith Jarrett"
+      ]
+    },
+    {
+      "node": "jazz-hop",
+      "artists": [
+        "Robert Glasper"
+      ]
+    },
+    {
+      "node": "Village Vanguard",
+      "kind": "scene"
+    }
+  ],
+  "links": [
+    [
+      "piano trio",
+      "Village Vanguard"
+    ],
+    [
+      "modal",
+      "piano trio"
+    ]
+  ],
+  "hue": 215
+}

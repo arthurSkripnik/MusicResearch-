@@ -1,0 +1,914 @@
+{
+ "release:blue-lines": {
+  "kind": "album",
+  "spotifyId": "5mAPk4qeNqVLtNydaWbWlf",
+  "link": "https://open.spotify.com/album/5mAPk4qeNqVLtNydaWbWlf",
+  "title": "Blue Lines (2012 Mix/Master)",
+  "artist": "Massive Attack",
+  "date": "1991-06-10"
+ },
+ "release:mezzanine": {
+  "kind": "album",
+  "spotifyId": "49MNmJhZQewjt06rpwp6QR",
+  "link": "https://open.spotify.com/album/49MNmJhZQewjt06rpwp6QR",
+  "title": "Mezzanine",
+  "artist": "Massive Attack",
+  "date": "1998-01-01"
+ },
+ "release:dummy": {
+  "kind": "album",
+  "spotifyId": "3539EbNgIdEDGBKkUf4wno",
+  "link": "https://open.spotify.com/album/3539EbNgIdEDGBKkUf4wno",
+  "title": "Dummy",
+  "artist": "Portishead",
+  "date": "1994-01-01"
+ },
+ "release:maxinquaye": {
+  "kind": "album",
+  "spotifyId": "7qlZpMib7D0riFPQ5JHDT8",
+  "link": "https://open.spotify.com/album/7qlZpMib7D0riFPQ5JHDT8",
+  "title": "Maxinquaye",
+  "artist": "Tricky, Martina Topley-Bird",
+  "date": "1995-01-01"
+ },
+ "release:londinium": {
+  "kind": "album",
+  "spotifyId": "6SpDB8znJJGwcuoj2GW1cV",
+  "link": "https://open.spotify.com/album/6SpDB8znJJGwcuoj2GW1cV",
+  "title": "Londinium",
+  "artist": "Archive",
+  "date": "1996-01-01"
+ },
+ "release:lights": {
+  "kind": "album",
+  "spotifyId": "2SYUYeZn82r6tp5deKfViJ",
+  "link": "https://open.spotify.com/album/2SYUYeZn82r6tp5deKfViJ",
+  "title": "Lights",
+  "artist": "Archive",
+  "date": "2006-01-01"
+ },
+ "release:ultra": {
+  "kind": "album",
+  "spotifyId": "7cmj0LC7Fob1p2BxsMYYAa",
+  "link": "https://open.spotify.com/album/7cmj0LC7Fob1p2BxsMYYAa",
+  "title": "Ultra",
+  "artist": "Depeche Mode",
+  "date": "1997-04-14"
+ },
+ "release:in-rainbows": {
+  "kind": "album",
+  "spotifyId": "5vkqYmiPBYLaalcmjujWxK",
+  "link": "https://open.spotify.com/album/5vkqYmiPBYLaalcmjujWxK",
+  "title": "In Rainbows",
+  "artist": "Radiohead",
+  "date": "2007-12-28"
+ },
+ "release:kid-a": {
+  "kind": "album",
+  "spotifyId": "6GjwtEZcfenmOf6l18N7T7",
+  "link": "https://open.spotify.com/album/6GjwtEZcfenmOf6l18N7T7",
+  "title": "Kid A",
+  "artist": "Radiohead",
+  "date": "2000-10-02"
+ },
+ "release:black-sands": {
+  "kind": "album",
+  "spotifyId": "5m1RkwKeU7MV0Ni6PH2lPy",
+  "link": "https://open.spotify.com/album/5m1RkwKeU7MV0Ni6PH2lPy",
+  "title": "Black Sands",
+  "artist": "Bonobo",
+  "date": "2010-03-29"
+ },
+ "release:days-to-come": {
+  "kind": "album",
+  "spotifyId": "5HLoU4oijKdSIFOk2o7mYn",
+  "link": "https://open.spotify.com/album/5HLoU4oijKdSIFOk2o7mYn",
+  "title": "Days To Come",
+  "artist": "Bonobo",
+  "date": "2006-10-02"
+ },
+ "release:blood-like-lemonade": {
+  "kind": "album",
+  "spotifyId": "3geSmfyqB7OGtiH4ZTGdNc",
+  "link": "https://open.spotify.com/album/3geSmfyqB7OGtiH4ZTGdNc",
+  "title": "Blood Like Lemonade",
+  "artist": "Morcheeba",
+  "date": "2010-06-07"
+ },
+ "release:lp5": {
+  "kind": "album",
+  "spotifyId": "6J9GbkoHKjabs0wpxbNSjf",
+  "link": "https://open.spotify.com/album/6J9GbkoHKjabs0wpxbNSjf",
+  "title": "LP5",
+  "artist": "Apparat",
+  "date": "2019-03-22"
+ },
+ "release:moderat-2009": {
+  "kind": "album",
+  "spotifyId": "2HEh23ogCT3wiYfag2iMxD",
+  "link": "https://open.spotify.com/album/2HEh23ogCT3wiYfag2iMxD",
+  "title": "Moderat",
+  "artist": "Moderat",
+  "date": "2009-05-11"
+ },
+ "release:moderat-ii": {
+  "kind": "album",
+  "spotifyId": "6710iABgc7qTLfNdaeNQS2",
+  "link": "https://open.spotify.com/album/6710iABgc7qTLfNdaeNQS2",
+  "title": "II",
+  "artist": "Moderat",
+  "date": "2013-08-02"
+ },
+ "release:war-stories": {
+  "kind": "album",
+  "spotifyId": "32e2hi6CBcxj3NUEZ6wetB",
+  "link": "https://open.spotify.com/album/32e2hi6CBcxj3NUEZ6wetB",
+  "title": "War Stories",
+  "artist": "UNKLE",
+  "date": "2007"
+ },
+ "release:psyence-fiction": {
+  "kind": "album",
+  "spotifyId": "0LFPjvWEaHP7WKQD6F5pVS",
+  "link": "https://open.spotify.com/album/0LFPjvWEaHP7WKQD6F5pVS",
+  "title": "Psyence Fiction",
+  "artist": "UNKLE",
+  "date": "1998-08-24"
+ },
+ "release:endtroducing": {
+  "kind": "album",
+  "spotifyId": "4tUVkNYSFrrEqqrxBQW9PN",
+  "link": "https://open.spotify.com/album/4tUVkNYSFrrEqqrxBQW9PN",
+  "title": "Endtroducing.....",
+  "artist": "DJ Shadow",
+  "date": "1996-01-01"
+ },
+ "release:experience": {
+  "kind": "album",
+  "spotifyId": "2hEyYIrm4e6gVgfaYLY00x",
+  "link": "https://open.spotify.com/album/2hEyYIrm4e6gVgfaYLY00x",
+  "title": "Experience",
+  "artist": "The Prodigy",
+  "date": "1992-09-21"
+ },
+ "release:jilted-generation": {
+  "kind": "album",
+  "spotifyId": "4qhJwKBr2ksxAUFjfJd3rb",
+  "link": "https://open.spotify.com/album/4qhJwKBr2ksxAUFjfJd3rb",
+  "title": "Music for the Jilted Generation",
+  "artist": "The Prodigy",
+  "date": "1994-04-04"
+ },
+ "release:fat-of-the-land": {
+  "kind": "album",
+  "spotifyId": "4fdgcEVMdJe0KVgupMNJAP",
+  "link": "https://open.spotify.com/album/4fdgcEVMdJe0KVgupMNJAP",
+  "title": "The Fat of the Land",
+  "artist": "The Prodigy",
+  "date": "1997-06-30"
+ },
+ "release:smokers-delight": {
+  "kind": "album",
+  "spotifyId": "3stVzMomzhVGw0prDxLY0K",
+  "link": "https://open.spotify.com/album/3stVzMomzhVGw0prDxLY0K",
+  "title": "Smokers Delight",
+  "artist": "Nightmares On Wax",
+  "date": "1995"
+ },
+ "release:timeless": {
+  "kind": "album",
+  "spotifyId": "67HPieOqDZ6G7WOM09Egbk",
+  "link": "https://open.spotify.com/album/67HPieOqDZ6G7WOM09Egbk",
+  "title": "Timeless",
+  "artist": "Goldie",
+  "date": "1995-01-01"
+ },
+ "release:new-forms": {
+  "kind": "album",
+  "spotifyId": "3e38PrPtIRDGbtbpc6jHrM",
+  "link": "https://open.spotify.com/album/3e38PrPtIRDGbtbpc6jHrM",
+  "title": "New Forms (20th Anniversary Edition)",
+  "artist": "Roni Size, Reprazent",
+  "date": "1997-05-23"
+ },
+ "release:dig-your-own-hole": {
+  "kind": "album",
+  "spotifyId": "0FjHy5dCyVROqDUl6f2VTK",
+  "link": "https://open.spotify.com/album/0FjHy5dCyVROqDUl6f2VTK",
+  "title": "Dig Your Own Hole",
+  "artist": "The Chemical Brothers",
+  "date": "1997-01-01"
+ },
+ "release:youve-come-a-long-way": {
+  "kind": "album",
+  "spotifyId": "0J43YxxLFPZxIrCd12LRuN",
+  "link": "https://open.spotify.com/album/0J43YxxLFPZxIrCd12LRuN",
+  "title": "You've Come a Long Way Baby",
+  "artist": "Fatboy Slim",
+  "date": "1998-10-19"
+ },
+ "release:let-us-play": {
+  "kind": "album",
+  "spotifyId": "06WYN4VlDuK6YCv7CKEomH",
+  "link": "https://open.spotify.com/album/06WYN4VlDuK6YCv7CKEomH",
+  "title": "Let Us Play",
+  "artist": "Coldcut",
+  "date": "1997"
+ },
+ "release:every-day": {
+  "kind": "album",
+  "spotifyId": "1EUXHvyflL27HwOTQgaVuh",
+  "link": "https://open.spotify.com/album/1EUXHvyflL27HwOTQgaVuh",
+  "title": "Every Day",
+  "artist": "The Cinematic Orchestra",
+  "date": "2002-05-13"
+ },
+ "release:bricolage": {
+  "kind": "album",
+  "spotifyId": "0DFvcq1cdpIdQxavKkEVCH",
+  "link": "https://open.spotify.com/album/0DFvcq1cdpIdQxavKkEVCH",
+  "title": "Bricolage",
+  "artist": "Amon Tobin",
+  "date": "1997-05-19"
+ },
+ "release:the-music-scene": {
+  "kind": "album",
+  "spotifyId": "4i0QEXwMps7KIuVq5PBckJ",
+  "link": "https://open.spotify.com/album/4i0QEXwMps7KIuVq5PBckJ",
+  "title": "The Music Scene",
+  "artist": "Blockhead",
+  "date": "2009"
+ },
+ "release:saw-85-92": {
+  "kind": "album",
+  "spotifyId": "7aNclGRxTysfh6z0d8671k",
+  "link": "https://open.spotify.com/album/7aNclGRxTysfh6z0d8671k",
+  "title": "Selected Ambient Works 85-92",
+  "artist": "Aphex Twin",
+  "date": "1992-02-10"
+ },
+ "release:amber": {
+  "kind": "album",
+  "spotifyId": "1brMCJ3wB9KNzAANIKJf32",
+  "link": "https://open.spotify.com/album/1brMCJ3wB9KNzAANIKJf32",
+  "title": "Amber",
+  "artist": "Autechre",
+  "date": "1994-11-07"
+ },
+ "release:mhtrtc": {
+  "kind": "album",
+  "spotifyId": "6LZiNXaDvhzvnXUubVOmNU",
+  "link": "https://open.spotify.com/album/6LZiNXaDvhzvnXUubVOmNU",
+  "title": "Music Has The Right To Children",
+  "artist": "Boards of Canada",
+  "date": "1998-04-20"
+ },
+ "release:mirror-conspiracy": {
+  "kind": "album",
+  "spotifyId": "5ZWFTOIoEcaqzLJBnQIXLc",
+  "link": "https://open.spotify.com/album/5ZWFTOIoEcaqzLJBnQIXLc",
+  "title": "Mirror Conspiracy",
+  "artist": "Thievery Corporation",
+  "date": "2000-08-09"
+ },
+ "release:ultraworld": {
+  "kind": "album",
+  "spotifyId": "0ee1sAau9a2DXQkAyezdwk",
+  "link": "https://open.spotify.com/album/0ee1sAau9a2DXQkAyezdwk",
+  "title": "Adventures Beyond The Ultraworld",
+  "artist": "The Orb",
+  "date": "1991-04-02"
+ },
+ "release:emergency": {
+  "kind": "album",
+  "spotifyId": "0SeTonJJPjy57LqiCDmeEM",
+  "link": "https://open.spotify.com/album/0SeTonJJPjy57LqiCDmeEM",
+  "title": "Emergency on Planet Earth (Remastered)",
+  "artist": "Jamiroquai",
+  "date": "1993-06-14"
+ },
+ "release:hand-on-the-torch": {
+  "kind": "album",
+  "spotifyId": "4Cm1wXjw6YCbkaiZZGNiZ1",
+  "link": "https://open.spotify.com/album/4Cm1wXjw6YCbkaiZZGNiZ1",
+  "title": "Hand On The Torch",
+  "artist": "Us3",
+  "date": "1993-01-01"
+ },
+ "release:bloodline": {
+  "kind": "album",
+  "spotifyId": "2FGRZHOv13ghXFfDW1ZoVO",
+  "link": "https://open.spotify.com/album/2FGRZHOv13ghXFfDW1ZoVO",
+  "title": "Bloodline (Bonus Tracks)",
+  "artist": "Recoil",
+  "date": "1992-01-01"
+ },
+ "release:unsound-methods": {
+  "kind": "album",
+  "spotifyId": "1mfxZqA5OsmWPAs0Id6L4f",
+  "link": "https://open.spotify.com/album/1mfxZqA5OsmWPAs0Id6L4f",
+  "title": "Unsound Methods (Bonus Tracks)",
+  "artist": "Recoil",
+  "date": "1997-10-27"
+ },
+ "release:liquid": {
+  "kind": "album",
+  "spotifyId": "6WzHi3cq9KJU8pqlNuuDc7",
+  "link": "https://open.spotify.com/album/6WzHi3cq9KJU8pqlNuuDc7",
+  "title": "Liquid (Bonus Tracks)",
+  "artist": "Recoil",
+  "date": "2000-01-01"
+ },
+ "release:shag-tobacco": {
+  "kind": "album",
+  "spotifyId": "0JYMZvEf6Y1SUN2Xit1HQu",
+  "link": "https://open.spotify.com/album/0JYMZvEf6Y1SUN2Xit1HQu",
+  "title": "Shag Tobacco",
+  "artist": "Gavin Friday",
+  "date": "1995-01-01"
+ },
+ "release:agaetis-byrjun": {
+  "kind": "album",
+  "spotifyId": "1DMMv1Kmoli3Y9fVEZDUVC",
+  "link": "https://open.spotify.com/album/1DMMv1Kmoli3Y9fVEZDUVC",
+  "title": "Ágætis byrjun",
+  "artist": "Sigur Rós",
+  "date": "1999-06-12"
+ },
+ "release:hopelessness": {
+  "kind": "album",
+  "spotifyId": "6zrFK6ltxpZZ0HmMgfOwbw",
+  "link": "https://open.spotify.com/album/6zrFK6ltxpZZ0HmMgfOwbw",
+  "title": "HOPELESSNESS",
+  "artist": "ANOHNI",
+  "date": "2016-05-06"
+ },
+ "release:rainbow-goblins": {
+  "kind": "album",
+  "spotifyId": "6es3mdUqpOlHSXPT6QeC7Y",
+  "link": "https://open.spotify.com/album/6es3mdUqpOlHSXPT6QeC7Y",
+  "title": "虹伝説～THE RAINBOW GOBLINS～",
+  "artist": "Masayoshi Takanaka",
+  "date": "1981"
+ },
+ "release:fantasma": {
+  "kind": "album",
+  "spotifyId": "3Wml3n8kxQ1S14zXynLduY",
+  "link": "https://open.spotify.com/album/3Wml3n8kxQ1S14zXynLduY",
+  "title": "Fantasma (Remastered)",
+  "artist": "Cornelius",
+  "date": "1998-03-24"
+ },
+ "release:baduizm": {
+  "kind": "album",
+  "spotifyId": "3qr4pTBWEU1SVf01j6RAx3",
+  "link": "https://open.spotify.com/album/3qr4pTBWEU1SVf01j6RAx3",
+  "title": "Baduizm",
+  "artist": "Erykah Badu",
+  "date": "1997-01-01"
+ },
+ "release:mamas-gun": {
+  "kind": "album",
+  "spotifyId": "3cADvHRdKniF9ELCn1zbGH",
+  "link": "https://open.spotify.com/album/3cADvHRdKniF9ELCn1zbGH",
+  "title": "Mama's Gun",
+  "artist": "Erykah Badu",
+  "date": "2000-10-31"
+ },
+ "release:brown-sugar": {
+  "kind": "album",
+  "spotifyId": "4HTVABUq8amDUxBv3zJbX4",
+  "link": "https://open.spotify.com/album/4HTVABUq8amDUxBv3zJbX4",
+  "title": "Brown Sugar",
+  "artist": "D'Angelo",
+  "date": "1995-07-03"
+ },
+ "release:voodoo": {
+  "kind": "album",
+  "spotifyId": "2lO9yuuIDgBpSJzxTh3ai8",
+  "link": "https://open.spotify.com/album/2lO9yuuIDgBpSJzxTh3ai8",
+  "title": "Voodoo",
+  "artist": "D'Angelo",
+  "date": "2000-01-01"
+ },
+ "release:things-fall-apart": {
+  "kind": "album",
+  "spotifyId": "0qbl8aNaCUOvX8HGsZYLfh",
+  "link": "https://open.spotify.com/album/0qbl8aNaCUOvX8HGsZYLfh",
+  "title": "Things Fall Apart",
+  "artist": "The Roots",
+  "date": "1999-02-23"
+ },
+ "release:like-water-for-chocolate": {
+  "kind": "album",
+  "spotifyId": "72GMOkq47rXzdAMJrjf4RV",
+  "link": "https://open.spotify.com/album/72GMOkq47rXzdAMJrjf4RV",
+  "title": "Like Water For Chocolate",
+  "artist": "Common",
+  "date": "2000-03-28"
+ },
+ "release:donuts": {
+  "kind": "album",
+  "spotifyId": "5fMlysqhFE0itGn4KezMBW",
+  "link": "https://open.spotify.com/album/5fMlysqhFE0itGn4KezMBW",
+  "title": "Donuts",
+  "artist": "J Dilla",
+  "date": "2006-02-07"
+ },
+ "track:heroist": {
+  "kind": "track",
+  "spotifyId": "3uNinLnvuW9lZ7ZBY5lpyd",
+  "link": "https://open.spotify.com/track/3uNinLnvuW9lZ7ZBY5lpyd",
+  "title": "HEROIST",
+  "artist": "Apparat",
+  "date": "2019-03-22"
+ },
+ "track:bad-kingdom": {
+  "kind": "track",
+  "spotifyId": "7aZdQpV56UcKPbR4lDQJi4",
+  "link": "https://open.spotify.com/track/7aZdQpV56UcKPbR4lDQJi4",
+  "title": "Bad Kingdom",
+  "artist": "Moderat",
+  "date": "2013-07-29"
+ },
+ "track:a-new-error": {
+  "kind": "track",
+  "spotifyId": "1fmoCZ6mtMiqA5GHWPcZz9",
+  "link": "https://open.spotify.com/track/1fmoCZ6mtMiqA5GHWPcZz9",
+  "title": "A New Error",
+  "artist": "Moderat",
+  "date": "2009-05-11"
+ },
+ "track:svefn-g-englar": {
+  "kind": "track",
+  "spotifyId": "07eGxuz8bL6QMsRqEe1Adu",
+  "link": "https://open.spotify.com/track/07eGxuz8bL6QMsRqEe1Adu",
+  "title": "Svefn-g-englar",
+  "artist": "Sigur Rós",
+  "date": "1999-06-12"
+ },
+ "track:how-to-disappear": {
+  "kind": "track",
+  "spotifyId": "2rtGaCAeYtmcIvuZsvgTf6",
+  "link": "https://open.spotify.com/track/2rtGaCAeYtmcIvuZsvgTf6",
+  "title": "How to Disappear Completely",
+  "artist": "Radiohead",
+  "date": "2000-10-02"
+ },
+ "track:drone-bomb-me": {
+  "kind": "track",
+  "spotifyId": "6JZfK4Z75nZm3VcZOVrpy0",
+  "link": "https://open.spotify.com/track/6JZfK4Z75nZm3VcZOVrpy0",
+  "title": "Drone Bomb Me",
+  "artist": "ANOHNI",
+  "date": "2016-05-06"
+ },
+ "track:rising-arch": {
+  "kind": "track",
+  "spotifyId": "1CBqy5d5Vuh4fiLGCsIoQK",
+  "link": "https://open.spotify.com/track/1CBqy5d5Vuh4fiLGCsIoQK",
+  "title": "RISING ARCH",
+  "artist": "Masayoshi Takanaka",
+  "date": "1981"
+ },
+ "track:pick-up": {
+  "kind": "track",
+  "spotifyId": "0fhoxg8I2MqRFjTrLFIIuO",
+  "link": "https://open.spotify.com/track/0fhoxg8I2MqRFjTrLFIIuO",
+  "title": "Pick Up",
+  "artist": "Bonobo",
+  "date": "2003-06-17"
+ },
+ "track:the-plug": {
+  "kind": "track",
+  "spotifyId": "1tWhIl1HgzlS8hSzbi3PSD",
+  "link": "https://open.spotify.com/track/1tWhIl1HgzlS8hSzbi3PSD",
+  "title": "The Plug",
+  "artist": "Bonobo",
+  "date": "2000-07-25"
+ },
+ "track:dark-lady": {
+  "kind": "track",
+  "spotifyId": "2eALAfP2PfljNcjlHPXDQY",
+  "link": "https://open.spotify.com/track/2eALAfP2PfljNcjlHPXDQY",
+  "title": "Dark Lady",
+  "artist": "DJ Food",
+  "date": "1995-03-01"
+ },
+ "track:curse": {
+  "kind": "track",
+  "spotifyId": "0Sv48HvlF5mGcIpsylqgaS",
+  "link": "https://open.spotify.com/track/0Sv48HvlF5mGcIpsylqgaS",
+  "title": "Curse",
+  "artist": "Recoil",
+  "date": "1992-01-01"
+ },
+ "track:shunt": {
+  "kind": "track",
+  "spotifyId": "2JX5Wj4dSk7JbxUkRGAn0Z",
+  "link": "https://open.spotify.com/track/2JX5Wj4dSk7JbxUkRGAn0Z",
+  "title": "Shunt",
+  "artist": "Recoil",
+  "date": "1997-10-27"
+ },
+ "track:next-lifetime": {
+  "kind": "track",
+  "spotifyId": "6sIMSl1n3KDPr03Fw8mujd",
+  "link": "https://open.spotify.com/track/6sIMSl1n3KDPr03Fw8mujd",
+  "title": "Next Lifetime",
+  "artist": "Erykah Badu",
+  "date": "1997-01-01"
+ },
+ "release:ussr-life": {
+  "kind": "album",
+  "spotifyId": "4ccX2l5Rdz18q11trOBkey",
+  "link": "https://open.spotify.com/album/4ccX2l5Rdz18q11trOBkey",
+  "title": "USSR:Life From The Other Side",
+  "artist": "DJ Vadim",
+  "date": "1999-09-01"
+ },
+ "track:terrorist": {
+  "kind": "track",
+  "spotifyId": "4COGfQ2ghg1FALVyyfzwmE",
+  "link": "https://open.spotify.com/track/4COGfQ2ghg1FALVyyfzwmE",
+  "title": "Terrorist",
+  "artist": "DJ Vadim",
+  "date": "1999-09-01"
+ },
+ "release:another-green-world": {
+  "kind": "album",
+  "spotifyId": "6uoeezh45SYEb8lcT8gDTY",
+  "link": "https://open.spotify.com/album/6uoeezh45SYEb8lcT8gDTY",
+  "title": "Another Green World (2004 Remaster)",
+  "artist": "Brian Eno",
+  "date": "1975-09-01"
+ },
+ "release:music-for-airports": {
+  "kind": "album",
+  "spotifyId": "063f8Ej8rLVTz9KkjQKEMa",
+  "link": "https://open.spotify.com/album/063f8Ej8rLVTz9KkjQKEMa",
+  "title": "Ambient 1: Music For Airports (Remastered 2004)",
+  "artist": "Brian Eno",
+  "date": "1978"
+ },
+ "release:secret-life": {
+  "kind": "album",
+  "spotifyId": "1FJVbtVFLARPKbn1HepNh1",
+  "link": "https://open.spotify.com/album/1FJVbtVFLARPKbn1HepNh1",
+  "title": "Secret Life",
+  "artist": "Fred again.., Brian Eno",
+  "date": "2023-05-05"
+ },
+ "release:nine-months": {
+  "kind": "album",
+  "spotifyId": "4HZ3fF1dwSZLwztlLwoDYA",
+  "link": "https://open.spotify.com/album/4HZ3fF1dwSZLwztlLwoDYA",
+  "title": "9 months & 50 hours",
+  "artist": "Fred again.., LATIN MAFIA",
+  "date": "2026-07-31"
+ },
+ "release:untrue": {
+  "kind": "album",
+  "spotifyId": "1oLxSFO8bJwsU2OmZY4cdU",
+  "link": "https://open.spotify.com/album/1oLxSFO8bJwsU2OmZY4cdU",
+  "title": "Untrue",
+  "artist": "Burial",
+  "date": "2007-11-05"
+ },
+ "release:fork-and-knife": {
+  "kind": "album",
+  "spotifyId": "5cld8q9clkWf6DtcUy9STc",
+  "link": "https://open.spotify.com/album/5cld8q9clkWf6DtcUy9STc",
+  "title": "The Fork and Knife",
+  "artist": "Skepta",
+  "date": "2026-11-06"
+ },
+ "release:no-protection": {
+  "kind": "album",
+  "spotifyId": "31m3CasBlRFcf8exTSkM1r",
+  "link": "https://open.spotify.com/album/31m3CasBlRFcf8exTSkM1r",
+  "title": "No Protection",
+  "artist": "Massive Attack",
+  "date": "1995-02-17"
+ },
+ "release:exodus": {
+  "kind": "album",
+  "spotifyId": "655KljKIXl42fiNDMKivbY",
+  "link": "https://open.spotify.com/album/655KljKIXl42fiNDMKivbY",
+  "title": "Exodus",
+  "artist": "Bob Marley & The Wailers",
+  "date": "1977-06-03"
+ },
+ "release:love-and-hate": {
+  "kind": "album",
+  "spotifyId": "0qxsfpy2VU0i4eDR9RTaAU",
+  "link": "https://open.spotify.com/album/0qxsfpy2VU0i4eDR9RTaAU",
+  "title": "Love & Hate",
+  "artist": "Michael Kiwanuka",
+  "date": "2016-07-15"
+ },
+ "release:midnight-marauders": {
+  "kind": "album",
+  "spotifyId": "4v5x3Oo3UjQ9YmF3hRAip5",
+  "link": "https://open.spotify.com/album/4v5x3Oo3UjQ9YmF3hRAip5",
+  "title": "Midnight Marauders",
+  "artist": "A Tribe Called Quest",
+  "date": "1993-11-09"
+ },
+ "release:kind-of-blue": {
+  "kind": "album",
+  "spotifyId": "1weenld61qoidwYuZ1GESA",
+  "link": "https://open.spotify.com/album/1weenld61qoidwYuZ1GESA",
+  "title": "Kind Of Blue",
+  "artist": "Miles Davis",
+  "date": "1959-08-17"
+ },
+ "release:art-of-the-trio-3": {
+  "kind": "album",
+  "spotifyId": "4XrD4Ta5YWbmJ1O1I4qnS9",
+  "link": "https://open.spotify.com/album/4XrD4Ta5YWbmJ1O1I4qnS9",
+  "title": "Songs: The Art of the Trio, Vol. 3",
+  "artist": "Brad Mehldau",
+  "date": "1998-09-15"
+ },
+ "release:mingus-ah-um": {
+  "kind": "album",
+  "spotifyId": "7pojWP7x9uEFSJgw765khA",
+  "link": "https://open.spotify.com/album/7pojWP7x9uEFSJgw765khA",
+  "title": "Mingus Ah Um",
+  "artist": "Charles Mingus",
+  "date": "1959"
+ },
+ "release:clin-doeil": {
+  "kind": "album",
+  "spotifyId": "3LGqUhFfPQ26PLU4Ok6ZpU",
+  "link": "https://open.spotify.com/album/3LGqUhFfPQ26PLU4Ok6ZpU",
+  "title": "Clin D'oeil",
+  "artist": "Jazz Liberatorz",
+  "date": "2008-01-21"
+ },
+ "release:becoming-x": {
+  "kind": "album",
+  "spotifyId": "4CqepH0gmnNKTgENheRgT7",
+  "link": "https://open.spotify.com/album/4CqepH0gmnNKTgENheRgT7",
+  "title": "Becoming X",
+  "artist": "Sneaker Pimps",
+  "date": "1996-08-18"
+ },
+ "release:false-idols": {
+  "kind": "album",
+  "spotifyId": "1YCA4AwpkNVg8yzfiTBoHS",
+  "link": "https://open.spotify.com/album/1YCA4AwpkNVg8yzfiTBoHS",
+  "title": "False Idols",
+  "artist": "Tricky",
+  "date": "2013-05-27"
+ },
+ "release:dial-m-for-monkey": {
+  "kind": "album",
+  "spotifyId": "6TaDSeHRXqw06H2PlYsD5K",
+  "link": "https://open.spotify.com/album/6TaDSeHRXqw06H2PlYsD5K",
+  "title": "Dial 'M' for Monkey",
+  "artist": "Bonobo",
+  "date": "2003-06-17"
+ },
+ "release:animal-magic": {
+  "kind": "album",
+  "spotifyId": "4ptDpUO3Uf910ekgmftYA8",
+  "link": "https://open.spotify.com/album/4ptDpUO3Uf910ekgmftYA8",
+  "title": "Animal Magic",
+  "artist": "Bonobo",
+  "date": "2000-07-25"
+ },
+ "track:cmon": {
+  "kind": "track",
+  "spotifyId": "4kaiSmJrLgQq0w2qFuzAwy",
+  "link": "https://open.spotify.com/track/4kaiSmJrLgQq0w2qFuzAwy",
+  "title": "Cmon",
+  "artist": "Fred again.., Brian Eno",
+  "date": "2023-05-05"
+ },
+ "track:come-on-home": {
+  "kind": "track",
+  "spotifyId": "6MyN49pk1GgnsH9owzqVLx",
+  "link": "https://open.spotify.com/track/6MyN49pk1GgnsH9owzqVLx",
+  "title": "Come On Home",
+  "artist": "Fred again.., Brian Eno",
+  "date": "2023-05-05"
+ },
+ "track:archangel": {
+  "kind": "track",
+  "spotifyId": "5kadOt1O3LrIV46dns9v7u",
+  "link": "https://open.spotify.com/track/5kadOt1O3LrIV46dns9v7u",
+  "title": "Archangel",
+  "artist": "Burial",
+  "date": "2007-11-05"
+ },
+ "track:secrets-of-patriarchy": {
+  "kind": "track",
+  "spotifyId": "1oOArQruDQQgIXqmyE569i",
+  "link": "https://open.spotify.com/track/1oOArQruDQQgIXqmyE569i",
+  "title": "Secrets of Patriarchy",
+  "artist": "Skepta",
+  "date": "2026-11-06"
+ },
+ "track:victory-lap": {
+  "kind": "track",
+  "spotifyId": "1lbNgoJ5iMrMluCyhI4OQP",
+  "link": "https://open.spotify.com/track/1lbNgoJ5iMrMluCyhI4OQP",
+  "title": "Victory Lap",
+  "artist": "Fred again.., Skepta, PlaqueBoyMax",
+  "date": "2025-06-18"
+ },
+ "track:trinity-dub": {
+  "kind": "track",
+  "spotifyId": "3bhmKlm6ufO3txz4HzzjSp",
+  "link": "https://open.spotify.com/track/3bhmKlm6ufO3txz4HzzjSp",
+  "title": "Trinity Dub (Three)",
+  "artist": "Massive Attack, Mad Professor, Nicolette",
+  "date": "1995-02-17"
+ },
+ "track:you-are-my-angel": {
+  "kind": "track",
+  "spotifyId": "5gUN8lFxrE0pzgRCWFFvKo",
+  "link": "https://open.spotify.com/track/5gUN8lFxrE0pzgRCWFFvKo",
+  "title": "You Are My Angel",
+  "artist": "Horace Andy",
+  "date": "2026-10-02"
+ },
+ "track:natural-mystic": {
+  "kind": "track",
+  "spotifyId": "5uqQyRJV8qLt8zEqnvsBVK",
+  "link": "https://open.spotify.com/track/5uqQyRJV8qLt8zEqnvsBVK",
+  "title": "Natural Mystic",
+  "artist": "Bob Marley & The Wailers",
+  "date": "1977-06-03"
+ },
+ "track:in-love-with-you": {
+  "kind": "track",
+  "spotifyId": "79UjqYt9MCLlBpzAvaKVJj",
+  "link": "https://open.spotify.com/track/79UjqYt9MCLlBpzAvaKVJj",
+  "title": "In Love With You",
+  "artist": "Erykah Badu, Stephen Marley",
+  "date": "2000-10-31"
+ },
+ "track:cold-little-heart": {
+  "kind": "track",
+  "spotifyId": "0qprlw0jfsW4H9cG0FFE0Z",
+  "link": "https://open.spotify.com/track/0qprlw0jfsW4H9cG0FFE0Z",
+  "title": "Cold Little Heart",
+  "artist": "Michael Kiwanuka",
+  "date": "2016-07-15"
+ },
+ "track:electric-relaxation": {
+  "kind": "track",
+  "spotifyId": "32WDVNZXIAuu7EqncTTKjH",
+  "link": "https://open.spotify.com/track/32WDVNZXIAuu7EqncTTKjH",
+  "title": "Electric Relaxation",
+  "artist": "A Tribe Called Quest",
+  "date": "1993-11-09"
+ },
+ "track:hold-on-brand-nubian": {
+  "kind": "track",
+  "spotifyId": "4ImTQlC00RiHkhyh7L83xM",
+  "link": "https://open.spotify.com/track/4ImTQlC00RiHkhyh7L83xM",
+  "title": "Hold On",
+  "artist": "Brand Nubian",
+  "date": "1994-10-11"
+ },
+ "track:right-place-wrong-time": {
+  "kind": "track",
+  "spotifyId": "0I2ELF6uHlL4ABu9aFiou7",
+  "link": "https://open.spotify.com/track/0I2ELF6uHlL4ABu9aFiou7",
+  "title": "Right Place Wrong Time",
+  "artist": "Dr. John",
+  "date": "1973"
+ },
+ "track:rainy-night-in-georgia": {
+  "kind": "track",
+  "spotifyId": "2zbV4xRYLuElz4PWOXI5P7",
+  "link": "https://open.spotify.com/track/2zbV4xRYLuElz4PWOXI5P7",
+  "title": "Rainy Night in Georgia",
+  "artist": "Brook Benton",
+  "date": "1970"
+ },
+ "track:everything-in-its-right-place": {
+  "kind": "track",
+  "spotifyId": "2kRFrWaLWiKq48YYVdGcm8",
+  "link": "https://open.spotify.com/track/2kRFrWaLWiKq48YYVdGcm8",
+  "title": "Everything In Its Right Place",
+  "artist": "Radiohead",
+  "date": "2000-10-02"
+ },
+ "track:kid-a-track": {
+  "kind": "track",
+  "spotifyId": "3QDahKSqLwYJYQRbILdzS6",
+  "link": "https://open.spotify.com/track/3QDahKSqLwYJYQRbILdzS6",
+  "title": "Kid A",
+  "artist": "Radiohead",
+  "date": "2000-10-02"
+ },
+ "track:the-national-anthem": {
+  "kind": "track",
+  "spotifyId": "4Wgj6jzoI2gYlumXdYAB8U",
+  "link": "https://open.spotify.com/track/4Wgj6jzoI2gYlumXdYAB8U",
+  "title": "The National Anthem",
+  "artist": "Radiohead",
+  "date": "2000-10-02"
+ },
+ "track:morning-bell": {
+  "kind": "track",
+  "spotifyId": "4h37RgtBg9iynN3BIL5lFU",
+  "link": "https://open.spotify.com/track/4h37RgtBg9iynN3BIL5lFU",
+  "title": "Morning Bell",
+  "artist": "Radiohead",
+  "date": "2000-10-02"
+ },
+ "track:blue-in-green": {
+  "kind": "track",
+  "spotifyId": "0aWMVrwxPNYkKmFthzmpRi",
+  "link": "https://open.spotify.com/track/0aWMVrwxPNYkKmFthzmpRi",
+  "title": "Blue in Green (feat. John Coltrane & Bill Evans)",
+  "artist": "Miles Davis, John Coltrane, Bill Evans",
+  "date": "1959-08-17"
+ },
+ "track:river-man": {
+  "kind": "track",
+  "spotifyId": "5FiSo7E1IvpBeowZxMk9UI",
+  "link": "https://open.spotify.com/track/5FiSo7E1IvpBeowZxMk9UI",
+  "title": "River Man",
+  "artist": "Brad Mehldau",
+  "date": "1998-09-15"
+ },
+ "track:exit-music-mehldau": {
+  "kind": "track",
+  "spotifyId": "73ik3a517Lz2W7eLWejapJ",
+  "link": "https://open.spotify.com/track/73ik3a517Lz2W7eLWejapJ",
+  "title": "Exit Music",
+  "artist": "Brad Mehldau",
+  "date": "1998-09-15"
+ },
+ "track:goodbye-pork-pie-hat": {
+  "kind": "track",
+  "spotifyId": "3PJMsxg6rz9FOo6xNiASXz",
+  "link": "https://open.spotify.com/track/3PJMsxg6rz9FOo6xNiASXz",
+  "title": "Goodbye Pork Pie Hat",
+  "artist": "Charles Mingus",
+  "date": "1959"
+ },
+ "track:clin-doeil-track": {
+  "kind": "track",
+  "spotifyId": "0Smxi47vM9rcOiUXsYuxER",
+  "link": "https://open.spotify.com/track/0Smxi47vM9rcOiUXsYuxER",
+  "title": "Clin D'oeil",
+  "artist": "Jazz Liberatorz",
+  "date": "2008-01-21"
+ },
+ "track:six-underground": {
+  "kind": "track",
+  "spotifyId": "5SJ7mZ4HZWbhFcHpBvHU55",
+  "link": "https://open.spotify.com/track/5SJ7mZ4HZWbhFcHpBvHU55",
+  "title": "6 Underground",
+  "artist": "Sneaker Pimps",
+  "date": "1996-08-18"
+ },
+ "track:passion-of-the-christ": {
+  "kind": "track",
+  "spotifyId": "1zNYbJhtALzsurnfn4X49g",
+  "link": "https://open.spotify.com/track/1zNYbJhtALzsurnfn4X49g",
+  "title": "Passion of the Christ",
+  "artist": "Tricky",
+  "date": "2013-05-27"
+ },
+ "track:caruso": {
+  "kind": "track",
+  "spotifyId": "6gBEAQvslzoVya5pFCZijC",
+  "link": "https://open.spotify.com/track/6gBEAQvslzoVya5pFCZijC",
+  "title": "Caruso",
+  "artist": "Gavin Friday",
+  "date": "1995-01-01"
+ },
+ "track:kong": {
+  "kind": "track",
+  "spotifyId": "7Cg3F9ZsZ2TYUnlza49NYh",
+  "link": "https://open.spotify.com/track/7Cg3F9ZsZ2TYUnlza49NYh",
+  "title": "Kong",
+  "artist": "Bonobo",
+  "date": "2010-03-29"
+ },
+ "track:incubus": {
+  "kind": "track",
+  "spotifyId": "4Dq70vT3YDCKj3j587rzsd",
+  "link": "https://open.spotify.com/track/4Dq70vT3YDCKj3j587rzsd",
+  "title": "Incubus",
+  "artist": "Recoil",
+  "date": "1997-10-27"
+ },
+ "track:useless-kd": {
+  "kind": "track",
+  "spotifyId": "1dg9OwiChqc10K9YRxealT",
+  "link": "https://open.spotify.com/track/1dg9OwiChqc10K9YRxealT",
+  "title": "Useless - The Kruder + Dorfmeister Session",
+  "artist": "Depeche Mode, Kruder & Dorfmeister",
+  "date": "2022-04-15"
+ }
+}

@@ -1,0 +1,3 @@
+# Тред «Explore Fred again.. and Latin Mafia»: 🔍 розбір Jon Hopkins — We Disappear (21.11.2026; Arthur також лайкнув трек)
+{"op":"entity","id":"release:immunity","type":"release","name":"Immunity","years":{"from":2013},"summary":"Четвертий альбом Jon Hopkins (3.06.2013), записаний у його студії в Hackney, Лондон. Відкривається звуком дверей студії; задуманий як дуга однієї ночі. Номінований на Mercury Prize 2013.","confidence":"likely","attrs":{"artist":"artist:jon-hopkins","releaseType":"album"}}
+{"op":"relation","type":"collaborated","from":"artist:moderat","to":"artist:jon-hopkins","why":"Moderat зробили ремікс Abandon Window з Immunity (є на розширеному виданні альбому на Spotify)."}

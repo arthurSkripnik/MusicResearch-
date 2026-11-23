@@ -1,0 +1,9 @@
+{"title": "Explorer · Indie & Art-Pop", "center": "art-pop",
+ "groups": [
+  {"node": "dark cabaret", "artists": ["Gavin Friday", "Tom Waits", "Scott Walker"]},
+  {"node": "art-pop voices", "artists": ["Kate Bush", "Björk", "FKA twigs"]},
+  {"node": "psych-pop", "artists": ["Tame Impala"]},
+  {"node": "Island", "kind": "label", "artists": ["Tom Waits", "Gavin Friday"]}
+ ],
+ "links": [["dark cabaret", "art-pop voices"]],
+ "hue": 345}

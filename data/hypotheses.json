@@ -1,0 +1,5 @@
+[
+{"id":"hyp:organic-electronic","text":"Електроніка стає для мене особливо цікавою, коли в ній є органічні елементи: джаз, соул, хіп-хоп, семпли, живі інструменти, сильний грув або мелодійно-гармонійний розвиток.","status":"open","related":["concept:live-instruments","concept:sampling","genre:jazz","genre:soul","genre:hip-hop","release:black-sands","release:londinium"],"origin":"brief-2026-11"},
+{"id":"hyp:album-cohesion","text":"Цілісні альбоми, які слухаються як один досвід, працюють для мене краще за збірки синглів.","status":"open","related":["release:unsound-methods","release:lights","release:londinium"],"origin":"brief-2026-11"},
+{"id":"hyp:vocals-as-texture","text":"Тексти зазвичай другорядні: вокал я сприймаю як ще одну текстуру чи емоційний елемент.","status":"open","related":[],"origin":"brief-2026-11"}
+]

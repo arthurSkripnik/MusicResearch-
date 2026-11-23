@@ -1,0 +1,319 @@
+{
+  "release:blue-lines": {
+    "link": "https://www.deezer.com/album/6014554",
+    "title": "Blue Lines (2012 Mix/Master)",
+    "artist": "Massive Attack",
+    "image": "https://cdn-images.dzcdn.net/images/cover/81ba5b6bf32dcbf2e2dae244a7cfab51/500x500-000000-80-0-0.jpg",
+    "score": 8
+  },
+  "release:mezzanine": {
+    "link": "https://www.deezer.com/album/301773",
+    "title": "Mezzanine",
+    "artist": "Massive Attack",
+    "image": "https://cdn-images.dzcdn.net/images/cover/85abbdc3ed4a7b94ace97f868fe70f63/500x500-000000-80-0-0.jpg",
+    "score": 9
+  },
+  "release:dummy": {
+    "link": "https://www.deezer.com/album/109301",
+    "title": "Dummy",
+    "artist": "Portishead",
+    "image": "https://cdn-images.dzcdn.net/images/cover/5942b88996f33c82790023d5d99395d3/500x500-000000-80-0-0.jpg",
+    "score": 9
+  },
+  "release:maxinquaye": {
+    "link": "https://www.deezer.com/album/240577",
+    "title": "Maxinquaye",
+    "artist": "Tricky",
+    "image": "https://cdn-images.dzcdn.net/images/cover/09e41882c0400fe091ceae9a7b40374b/500x500-000000-80-0-0.jpg",
+    "score": 9
+  },
+  "release:londinium": {
+    "miss": true,
+    "best": "Archive — 25 s5"
+  },
+  "release:lights": {
+    "link": "https://www.deezer.com/album/59207122",
+    "title": "Lights",
+    "artist": "Archive",
+    "image": "https://cdn-images.dzcdn.net/images/cover/4d042877f9014a1be749fb9ffa75affb/500x500-000000-80-0-0.jpg",
+    "score": 9
+  },
+  "release:ultra": {
+    "link": "https://www.deezer.com/album/6709160",
+    "title": "Ultra",
+    "artist": "Depeche Mode",
+    "image": "https://cdn-images.dzcdn.net/images/cover/9db38fa8d1c3f1c103a8f459dba58146/500x500-000000-80-0-0.jpg",
+    "score": 9
+  },
+  "release:in-rainbows": {
+    "link": "https://www.deezer.com/album/14880659",
+    "title": "In Rainbows",
+    "artist": "Radiohead",
+    "image": "https://cdn-images.dzcdn.net/images/cover/a175af9b7d329bc678cb4d26fc13d6de/500x500-000000-80-0-0.jpg",
+    "score": 9
+  },
+  "release:kid-a": {
+    "link": "https://www.deezer.com/album/14880741",
+    "title": "Kid A",
+    "artist": "Radiohead",
+    "image": "https://cdn-images.dzcdn.net/images/cover/e5925065cdb1cefbc3bd75af4a1f1801/500x500-000000-80-0-0.jpg",
+    "score": 9
+  },
+  "release:black-sands": {
+    "link": "https://www.deezer.com/album/935909",
+    "title": "Black Sands",
+    "artist": "Bonobo",
+    "image": "https://cdn-images.dzcdn.net/images/cover/2d7466fa488d38bc56ac9da0bdbc0082/500x500-000000-80-0-0.jpg",
+    "score": 9
+  },
+  "release:days-to-come": {
+    "link": "https://www.deezer.com/album/936108",
+    "title": "Days To Come",
+    "artist": "Bonobo",
+    "image": "https://cdn-images.dzcdn.net/images/cover/3a8b677004eafc7679a78bb7dc96a856/500x500-000000-80-0-0.jpg",
+    "score": 9
+  },
+  "release:blood-like-lemonade": {
+    "link": "https://www.deezer.com/album/572464",
+    "title": "Blood Like Lemonade",
+    "artist": "Morcheeba",
+    "image": "https://cdn-images.dzcdn.net/images/cover/507373f40ad8a2ec95c11a50269fee7a/500x500-000000-80-0-0.jpg",
+    "score": 9
+  },
+  "release:lp5": {
+    "link": "https://www.deezer.com/album/90801242",
+    "title": "LP5",
+    "artist": "Apparat",
+    "image": "https://cdn-images.dzcdn.net/images/cover/31c5c6886635ad16d2586d0b500c65bc/500x500-000000-80-0-0.jpg",
+    "score": 9
+  },
+  "release:moderat-2009": {
+    "link": "https://www.deezer.com/album/61295392",
+    "title": "Moderat",
+    "artist": "Moderat",
+    "image": "https://cdn-images.dzcdn.net/images/cover/c4993158ddf60a7df2b7c8ca495854ba/500x500-000000-80-0-0.jpg",
+    "score": 9
+  },
+  "release:moderat-ii": {
+    "link": "https://www.deezer.com/album/319320437",
+    "title": "II",
+    "artist": "Moderat",
+    "image": "https://cdn-images.dzcdn.net/images/cover/709114a155a3a763840a3ed6fb79530d/500x500-000000-80-0-0.jpg",
+    "score": 9
+  },
+  "release:war-stories": {
+    "link": "https://www.deezer.com/album/9351678",
+    "title": "War Stories",
+    "artist": "UNKLE",
+    "image": "https://cdn-images.dzcdn.net/images/cover/acab43145cd30f128d8f6973518dea41/500x500-000000-80-0-0.jpg",
+    "score": 9
+  },
+  "release:psyence-fiction": {
+    "link": "https://www.deezer.com/album/400082747",
+    "title": "Psyence Fiction",
+    "artist": "UNKLE",
+    "image": "https://cdn-images.dzcdn.net/images/cover/4a3197ec85bafd24c3ae5ddf3e8c5f5f/500x500-000000-80-0-0.jpg",
+    "score": 9
+  },
+  "release:endtroducing": {
+    "link": "https://www.deezer.com/album/388025577",
+    "title": "Endtroducing.....",
+    "artist": "DJ Shadow",
+    "image": "https://cdn-images.dzcdn.net/images/cover/fb1d7bedd053f8269b6f0bc8c4e9a4b2/500x500-000000-80-0-0.jpg",
+    "score": 9
+  },
+  "release:experience": {
+    "link": "https://www.deezer.com/album/572670391",
+    "title": "Experience",
+    "artist": "The Prodigy",
+    "image": "https://cdn-images.dzcdn.net/images/cover/75be15fac2c54d3c39b56e4338ef72cc/500x500-000000-80-0-0.jpg",
+    "score": 9
+  },
+  "release:jilted-generation": {
+    "link": "https://www.deezer.com/album/6508878",
+    "title": "Music for the Jilted Generation",
+    "artist": "The Prodigy",
+    "image": "https://cdn-images.dzcdn.net/images/cover/38784e0508673b377766d14fa807bac7/500x500-000000-80-0-0.jpg",
+    "score": 9
+  },
+  "release:fat-of-the-land": {
+    "link": "https://www.deezer.com/album/6509072",
+    "title": "The Fat of the Land",
+    "artist": "The Prodigy",
+    "image": "https://cdn-images.dzcdn.net/images/cover/14e62ec4de9dd00e8b01e360e9f197a8/500x500-000000-80-0-0.jpg",
+    "score": 9
+  },
+  "release:smokers-delight": {
+    "link": "https://www.deezer.com/album/2795141",
+    "title": "Smokers Delight",
+    "artist": "Nightmares On Wax",
+    "image": "https://cdn-images.dzcdn.net/images/cover/f5af2dfb5ad51452996d1d9b57883617/500x500-000000-80-0-0.jpg",
+    "score": 9
+  },
+  "release:timeless": {
+    "link": "https://www.deezer.com/album/51698062",
+    "title": "Timeless",
+    "artist": "Goldie",
+    "image": "https://cdn-images.dzcdn.net/images/cover/6711cd2e8f2f840af25af0d34be23182/500x500-000000-80-0-0.jpg",
+    "score": 9
+  },
+  "release:new-forms": {
+    "link": "https://www.deezer.com/album/403184087",
+    "title": "New Forms (20th Anniversary Edition)",
+    "artist": "Roni Size",
+    "image": "https://cdn-images.dzcdn.net/images/cover/975b5568cc4f3d3089327b13c129f115/500x500-000000-80-0-0.jpg",
+    "score": 7.5
+  },
+  "release:dig-your-own-hole": {
+    "link": "https://www.deezer.com/album/310178",
+    "title": "Dig Your Own Hole",
+    "artist": "The Chemical Brothers",
+    "image": "https://cdn-images.dzcdn.net/images/cover/7c8bd1e14f031edc71eb4fdd6737c428/500x500-000000-80-0-0.jpg",
+    "score": 9
+  },
+  "release:youve-come-a-long-way": {
+    "link": "https://www.deezer.com/album/1448788",
+    "title": "You've Come A Long Way Baby",
+    "artist": "Fatboy Slim",
+    "image": "https://cdn-images.dzcdn.net/images/cover/3893ecf99ac169ed8587ec2e22ef6b89/500x500-000000-80-0-0.jpg",
+    "score": 9
+  },
+  "release:let-us-play": {
+    "link": "https://www.deezer.com/album/936142",
+    "title": "Let Us Play",
+    "artist": "Coldcut",
+    "image": "https://cdn-images.dzcdn.net/images/cover/45017ea5a8828e06279f55ae4d1ebd2f/500x500-000000-80-0-0.jpg",
+    "score": 9
+  },
+  "release:every-day": {
+    "link": "https://www.deezer.com/album/936166",
+    "title": "Every Day",
+    "artist": "The Cinematic Orchestra",
+    "image": "https://cdn-images.dzcdn.net/images/cover/54321e817dec0b9a2fec82251feda9de/500x500-000000-80-0-0.jpg",
+    "score": 9
+  },
+  "release:bricolage": {
+    "link": "https://www.deezer.com/album/48047292",
+    "title": "Bricolage",
+    "artist": "Amon Tobin",
+    "image": "https://cdn-images.dzcdn.net/images/cover/247b7660c08b9c49d49a40872726fabe/500x500-000000-80-0-0.jpg",
+    "score": 9
+  },
+  "release:the-music-scene": {
+    "link": "https://www.deezer.com/album/935885",
+    "title": "The Music Scene",
+    "artist": "Blockhead",
+    "image": "https://cdn-images.dzcdn.net/images/cover/31ef50180b2be9e4f1369fc8eb26c2bc/500x500-000000-80-0-0.jpg",
+    "score": 9
+  },
+  "release:ussr-life": {
+    "link": "https://www.deezer.com/album/936156",
+    "title": "USSR:Life From The Other Side",
+    "artist": "DJ Vadim",
+    "image": "https://cdn-images.dzcdn.net/images/cover/db0acf0f6fa286b40528e7c2562969e2/500x500-000000-80-0-0.jpg",
+    "score": "manual"
+  },
+  "release:saw-85-92": {
+    "link": "https://www.deezer.com/album/12977824",
+    "title": "Selected Ambient Works 85-92",
+    "artist": "Aphex Twin",
+    "image": "https://cdn-images.dzcdn.net/images/cover/61597432632bf90678b7132db0451f45/500x500-000000-80-0-0.jpg",
+    "score": 9
+  },
+  "release:amber": {
+    "link": "https://www.deezer.com/album/2795041",
+    "title": "Amber",
+    "artist": "Autechre",
+    "image": "https://cdn-images.dzcdn.net/images/cover/36c997080801f4ec5aab79e33a9797ec/500x500-000000-80-0-0.jpg",
+    "score": 9
+  },
+  "release:mhtrtc": {
+    "link": "https://www.deezer.com/album/2795271",
+    "title": "Music Has The Right To Children",
+    "artist": "Boards Of Canada",
+    "image": "https://cdn-images.dzcdn.net/images/cover/c3c2e2a739ed501d01791b16a3fd9ad3/500x500-000000-80-0-0.jpg",
+    "score": 9
+  },
+  "release:kd-sessions": {
+    "miss": true,
+    "best": null
+  },
+  "release:mirror-conspiracy": {
+    "link": "https://www.deezer.com/album/912224751",
+    "title": "Mirror Conspiracy",
+    "artist": "Thievery Corporation",
+    "image": "https://cdn-images.dzcdn.net/images/cover/4222104ba8ba8329ba53c06ace71db38/500x500-000000-80-0-0.jpg",
+    "score": "manual"
+  },
+  "release:ultraworld": {
+    "link": "https://www.deezer.com/album/153092242",
+    "title": "Adventures Beyond The Ultraworld",
+    "artist": "The Orb",
+    "image": "https://cdn-images.dzcdn.net/images/cover/111a49adce26aca2fb045e2a0a37742c/500x500-000000-80-0-0.jpg",
+    "score": 9
+  },
+  "release:emergency": {
+    "link": "https://www.deezer.com/album/6328183",
+    "title": "Emergency on Planet Earth (Remastered)",
+    "artist": "Jamiroquai",
+    "image": "https://cdn-images.dzcdn.net/images/cover/ae0b258098cccb8ae9bce374714a6e0a/500x500-000000-80-0-0.jpg",
+    "score": 7.5
+  },
+  "release:hand-on-the-torch": {
+    "link": "https://www.deezer.com/album/319847",
+    "title": "Hand On The Torch",
+    "artist": "Us3",
+    "image": "https://cdn-images.dzcdn.net/images/cover/413709dbd9752945249122b73372dea2/500x500-000000-80-0-0.jpg",
+    "score": 9
+  },
+  "release:bloodline": {
+    "link": "https://www.deezer.com/album/1345669",
+    "title": "Bloodline",
+    "artist": "Recoil",
+    "image": "https://cdn-images.dzcdn.net/images/cover/a2dc670d220f811428b14b166f134cb4/500x500-000000-80-0-0.jpg",
+    "score": 9
+  },
+  "release:unsound-methods": {
+    "link": "https://www.deezer.com/album/1346720",
+    "title": "Unsound Methods",
+    "artist": "Recoil",
+    "image": "https://cdn-images.dzcdn.net/images/cover/5c56dfd0cca50118538e80a917ab104a/500x500-000000-80-0-0.jpg",
+    "score": 9
+  },
+  "release:liquid": {
+    "miss": true,
+    "best": null
+  },
+  "release:shag-tobacco": {
+    "link": "https://www.deezer.com/album/1286733",
+    "title": "Shag Tobacco",
+    "artist": "Gavin Friday",
+    "image": "https://cdn-images.dzcdn.net/images/cover/2741ec9c7d1aa5d6af63e45a1f65d4c7/500x500-000000-80-0-0.jpg",
+    "score": 9
+  },
+  "release:agaetis-byrjun": {
+    "link": "https://www.deezer.com/album/82417442",
+    "title": "Ágætis byrjun",
+    "artist": "Sigur Rós",
+    "image": "https://cdn-images.dzcdn.net/images/cover/ae60fc6b15e0a01a4d1dfb1e42104cb9/500x500-000000-80-0-0.jpg",
+    "score": 9
+  },
+  "release:hopelessness": {
+    "link": "https://www.deezer.com/album/12797462",
+    "title": "HOPELESSNESS",
+    "artist": "ANOHNI",
+    "image": "https://cdn-images.dzcdn.net/images/cover/216e1ef15410ecbae49e3d389f896912/500x500-000000-80-0-0.jpg",
+    "score": 9
+  },
+  "release:rainbow-goblins": {
+    "miss": true,
+    "best": "Masayoshi Takanaka — On Guitar s5"
+  },
+  "release:fantasma": {
+    "link": "https://www.deezer.com/album/6748627",
+    "title": "Fantasma",
+    "artist": "Cornelius",
+    "image": "https://cdn-images.dzcdn.net/images/cover/96b647c66643ad9f1147d39019969b8c/500x500-000000-80-0-0.jpg",
+    "score": 9
+  }
+}

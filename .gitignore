@@ -1,0 +1,10 @@
+node_modules/
+dist/
+# Spotify OAuth tokens: never commit
+spotify/.state.json
+.env*
+# build output kept for the Claude artifact, not needed in git
+music-explorer.html
+spotify/.ntfy-topic
+spotify/.ntfy-count.json
+spotify/ntfy-queue.jsonl

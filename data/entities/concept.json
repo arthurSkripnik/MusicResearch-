@@ -1,0 +1,15 @@
+[
+{"id":"concept:sampling","type":"concept","name":"Sampling","summary":"Побудова музики з фрагментів інших записів.","attrs":{"kind":"technique"},"confidence":"established","author":"claude"},
+{"id":"concept:breakbeat","type":"concept","name":"Breakbeat (drum break)","summary":"Фрагмент, де в записі грають лише барабани; зациклений, стає основою нового треку.","attrs":{"kind":"technique"},"confidence":"established","author":"claude"},
+{"id":"concept:amen-break","type":"concept","name":"Amen break","summary":"Шестисекундний барабанний брейк з треку The Winstons «Amen, Brother» (1969). Мабуть, найвідоміший семпл jungle.","attrs":{"kind":"technique"},"confidence":"established","author":"claude"},
+{"id":"concept:turntablism","type":"concept","name":"Turntablism","summary":"Програвач як інструмент: скретч, біт-джаглінг.","attrs":{"kind":"technique"},"confidence":"established","author":"claude"},
+{"id":"concept:collage","type":"concept","name":"Musical collage","summary":"Композиція як монтаж різнорідних семплів у цілісний твір.","attrs":{"kind":"technique"},"confidence":"established","author":"claude"},
+{"id":"concept:dub-production","type":"concept","name":"Dub production","summary":"Ехо, ревербератор, вимикання інструментів у міксі — простір як матеріал.","attrs":{"kind":"technique"},"confidence":"established","author":"claude"},
+{"id":"concept:dub-bass","type":"concept","name":"Dub bass","summary":"Глибокий, повільний, фізично відчутний бас із реґі/даб-традиції.","attrs":{"kind":"sound"},"confidence":"established","author":"claude"},
+{"id":"concept:live-instruments","type":"concept","name":"Live instruments","summary":"Живі інструменти й бенд поверх або замість семплів.","attrs":{"kind":"sound"},"confidence":"established","author":"claude"},
+{"id":"concept:cinematic","type":"concept","name":"Cinematic atmosphere","summary":"Музика як саундтрек до неіснуючого фільму: оркестрові/нуарні семпли, драматургія.","attrs":{"kind":"sound"},"confidence":"established","author":"claude"},
+{"id":"concept:rave-stabs","type":"concept","name":"Rave stabs & hoovers","summary":"Різкі синтезаторні акорди й «пилососні» звуки ранньої rave-музики.","attrs":{"kind":"sound"},"confidence":"established","author":"claude"},
+{"id":"concept:dilla-feel","type":"concept","name":"Dilla feel (unquantized groove)","summary":"Біт без жорсткої прив’язки до сітки: удари трохи запізнюються або «плавають», і грув звучить розхитано й по-людськи. Пов’язують з J Dilla.","attrs":{"kind":"sound"},"confidence":"likely","author":"claude","note":"Назва неформальна, з музичної журналістики."},
+{"id":"concept:vocal-chops","type":"concept","name":"Voice as instrument","aliases":["vocal chops"],"confidence":"established","author":"claude","attrs":{"kind":"technique"},"summary":"Голос нарізають семплером на склади й фрагменти, і він звучить як ще один інструмент, а не як носій тексту."},
+{"id":"concept:spoken-word","type":"concept","name":"Spoken word","confidence":"established","author":"claude","attrs":{"kind":"technique"},"summary":"Слова в музиці не співаються, а промовляються чи декламуються. Артур назвав це «spell words»."}
+]

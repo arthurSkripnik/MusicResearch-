@@ -1,0 +1,1 @@
+{"title": "Explorer · Outkast & Southern Hip-Hop", "center": "hip-hop", "groups": [{"node": "Atlanta", "kind": "scene", "artists": ["Outkast"]}, {"node": "Dungeon Family", "kind": "label", "artists": ["Goodie Mob"]}, {"node": "funk", "artists": []}, {"node": "ambient", "artists": ["André 3000"]}], "links": [["Atlanta", "Dungeon Family"]], "hue": 45}

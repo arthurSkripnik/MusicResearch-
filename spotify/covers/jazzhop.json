@@ -1,0 +1,6 @@
+{"title": "Explorer · Jazz-hop & Lo-fi", "center": "jazz-hop", "groups": [
+ {"node": "London jazz", "kind": "scene", "artists": ["Tom Misch", "Yussef Dayes"]},
+ {"node": "Detroit", "kind": "scene", "artists": ["J Dilla"]},
+ {"node": "Tokyo", "kind": "scene", "artists": ["Nujabes", "DJ Krush"]},
+ {"node": "Paris", "kind": "scene", "artists": ["Jazz Liberatorz"]}],
+ "links": [["Detroit","Tokyo"]], "hue": 35}

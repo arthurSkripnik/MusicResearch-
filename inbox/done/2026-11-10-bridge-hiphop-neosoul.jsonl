@@ -1,0 +1,11 @@
+# Bridge Hip Hop ⇄ Neo Soul (thread "Design genre connection details in map", Arthur approved the build 2026-11-10)
+{"op":"unrelation","id":"influenced:genre:hip-hop>genre:neo-soul"}
+{"op":"relation","type":"influenced","from":"genre:hip-hop","to":"genre:neo-soul","why":"Neo-soul узяв у хіп-хопу біт, продюсерів і музикантів: розхитаний грув J Dilla у Voodoo і Mama’s Gun, The Roots на Baduizm.","via":["artist:j-dilla","artist:the-roots","release:voodoo","concept:dilla-feel"]}
+{"op":"relation","type":"influenced","from":"genre:neo-soul","to":"genre:hip-hop","why":"Neo-soul дав хіп-хопу живий бенд і соул-приспіви: «You Got Me» The Roots з Erykah Badu, Like Water for Chocolate Common.","confidence":"likely","via":["artist:erykah-badu","release:things-fall-apart","release:like-water-for-chocolate"]}
+{"op":"relation","type":"influenced","from":"genre:funk","to":"genre:hip-hop","why":"Барабанні брейки з фанк-записів стали сировиною для перших хіп-хоп бітів."}
+{"op":"relation","type":"influenced","from":"genre:soul","to":"genre:hip-hop","why":"Семпли соул-записів і соул-вокал у приспівах.","confidence":"likely"}
+{"op":"relation","type":"produced","from":"artist:j-dilla","to":"release:like-water-for-chocolate","why":"Спродюсував більшість треків альбому, разом із Soulquarians."}
+{"op":"entity","id":"track:you-got-me","type":"track","name":"You Got Me","attrs":{"artist":"artist:the-roots","release":"release:things-fall-apart"}}
+{"op":"relation","type":"collaborated","from":"artist:erykah-badu","to":"track:you-got-me","why":"Співає в треку разом з Eve; «You Got Me» отримав Grammy 2000 за реп-виконання дуетом або групою."}
+{"op":"note","id":"note-2026-11-10-bridge-likes","date":"2026-11-10","source":"Arthur's Spotify Liked Songs (snapshot 2026-11-07): The Roots feat. Erykah Badu & Eve — You Got Me. A Spotify like is Arthur's own signal.","statuses":{"track:you-got-me":"liked"}}
+{"op":"bridge","a":"genre:hip-hop","b":"genre:neo-soul","diff":"Хіп-хоп тримається на репі й семплах, neo-soul — на співі й живому бенді, але обидва беруть із тих самих платівок соулу, фанку й джазу 1970-х.","pin":["scene:soulquarians","artist:j-dilla","release:voodoo","concept:dilla-feel"],"era":[1995,2003]}

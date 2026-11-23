@@ -1,0 +1,12 @@
+# Melodic house thread, 2026-11-10: DARKSIDE з «➕ Дослідити» (One Last Nothing). Arthur уже лайкнув One Last Nothing і Paper Trails.
+{"op":"entity","id":"artist:nicolas-jaar","type":"artist","name":"Nicolas Jaar","country":"US","years":{"from":2008},"summary":"Нью-йоркський продюсер чилійського походження. Space Is Only Noise (2011) приніс повільний, мінімалістичний house на ~100 BPM; лейбли Clown & Sunset, потім Other People.","confidence":"established","author":"claude"}
+{"op":"entity","id":"artist:darkside","type":"artist","name":"DARKSIDE","country":"US","years":{"from":2011},"summary":"Nicolas Jaar і гітарист Dave Harrington: електроніка Jaar плюс психоделічна блюз-гітара. Psychic (2013), Spiral (2021), Nothing (2025, вже тріо з барабанщиком Tlacael Esparza).","confidence":"established","author":"claude"}
+{"op":"entity","id":"artist:against-all-logic","type":"artist","name":"Against All Logic","country":"US","years":{"from":2012},"summary":"House-псевдонім Nicolas Jaar на семплах соулу й диско. Збірка 2012–2017 (2018).","confidence":"established","author":"claude"}
+{"op":"entity","id":"label:other-people","type":"label","name":"Other People","country":"US","years":{"from":2013},"summary":"Лейбл Nicolas Jaar, наступник Clown & Sunset.","confidence":"likely","author":"claude"}
+{"op":"entity","id":"release:psychic","type":"release","name":"Psychic","years":{"from":2013},"summary":"Дебют DARKSIDE: 11-хвилинний Golden Arrow відкриває альбом, де house-пульс поступово перетворюється на психоделічний рок.","confidence":"established","author":"claude","attrs":{"artist":"artist:darkside","releaseType":"album"}}
+{"op":"relation","type":"member_of","from":"artist:nicolas-jaar","to":"artist:darkside","why":"Співзасновник разом із Dave Harrington."}
+{"op":"relation","type":"member_of","from":"artist:nicolas-jaar","to":"artist:against-all-logic","why":"Сольний псевдонім Jaar."}
+{"op":"relation","type":"signed_to","from":"artist:darkside","to":"label:other-people","why":"Psychic вийшов на Other People / Matador."}
+{"op":"relation","type":"in_genre","from":"artist:darkside","to":"genre:electronica","why":"Електроніка, що межує з психоделічним роком."}
+{"op":"relation","type":"in_genre","from":"artist:nicolas-jaar","to":"genre:house","why":"Повільний мінімалістичний house раннього періоду."}
+{"op":"relation","type":"in_genre","from":"artist:against-all-logic","to":"genre:house","why":"Семпловий house."}

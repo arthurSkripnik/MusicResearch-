@@ -1,0 +1,210 @@
+<title>Як працює Music Explorer</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one wide flow diagram in four columns (Spotify → щоденний intake → треди → тижнева карта), then short reading sections */
+:root{
+  --bg:#f5f6f2; --panel:#eaece4; --card:#ffffff; --fg:#1d2420; --muted:#5d6760; --line:#c9cec4;
+  --you:#c2410c; --auto:#0f766e; --thread:#6d28d9; --week:#a16207;
+  --sans:"Onest",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#141816; --panel:#1c211e; --card:#242a26; --fg:#e7ebe6; --muted:#9aa49d; --line:#39413b;
+  --you:#fb923c; --auto:#2dd4bf; --thread:#a78bfa; --week:#facc15; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141816; --panel:#1c211e; --card:#242a26; --fg:#e7ebe6; --muted:#9aa49d; --line:#39413b;
+  --you:#fb923c; --auto:#2dd4bf; --thread:#a78bfa; --week:#facc15; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:15px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 48px}
+main{max-width:1200px;margin:0 auto;display:grid;gap:32px}
+h1{font-size:30px;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h2{font-size:20px;margin:0 0 10px;text-wrap:balance}
+.lead{color:var(--muted);max-width:68ch;margin:6px 0 0}
+.legend{display:flex;flex-wrap:wrap;gap:8px 20px;font-family:var(--mono);font-size:12px;color:var(--muted)}
+.legend span::before{content:"";display:inline-block;width:22px;height:3px;border-radius:2px;margin-right:8px;vertical-align:middle;background:var(--c)}
+.diagram{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px}
+svg{display:block;min-width:1100px;width:100%;height:auto}
+svg text{font-family:var(--sans);fill:var(--fg)}
+.pnl{fill:var(--panel)} .bx{fill:var(--card);stroke:var(--line)}
+.pt{font-family:var(--mono);font-size:11px;fill:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.t{font-size:14px;font-weight:700} .s{font-size:12px;fill:var(--muted)} .lb{font-size:11.5px;font-weight:500}
+.y{stroke:var(--you)} .a{stroke:var(--auto)} .h{stroke:var(--thread)} .w{stroke:var(--week)}
+.y,.a,.h,.w{fill:none;stroke-width:2}
+.ly{fill:var(--you)} .la{fill:var(--auto)} .lh{fill:var(--thread)} .lw{fill:var(--week)}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px}
+.cols>section{min-width:0}
+ol,ul{margin:0;padding-left:20px;display:grid;gap:8px}
+.mono{font-family:var(--mono);font-size:13px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+td{padding:8px 10px 8px 0;border-top:1px solid var(--line);vertical-align:top}
+td:first-child{font-family:var(--mono);font-size:13px;white-space:nowrap}
+.tw{overflow-x:auto}
+</style>
+<main>
+<header>
+  <h1>Як працює Music Explorer</h1>
+  <p class="lead">Ти слухаєш і лайкаєш у Spotify. Щовечора о 20:45 автоматичний крок забирає це, сортує і роздає дослідницьким тредам. Треди рекомендують нове в плейлисти Explorer, а раз на тиждень, у п'ятницю, усе, що ми дізналися, потрапляє на карту.</p>
+</header>
+<div class="legend">
+  <span style="--c:var(--you)">ти</span>
+  <span style="--c:var(--auto)">щодня 20:45, автоматично</span>
+  <span style="--c:var(--thread)">дослідницькі треди</span>
+  <span style="--c:var(--week)">щоп'ятниці 18:00</span>
+</div>
+
+<div class="diagram" role="img" aria-label="Схема потоків Music Explorer">
+<svg viewBox="0 0 1192 720" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <marker id="my" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" style="fill:var(--you)"/></marker>
+  <marker id="ma" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" style="fill:var(--auto)"/></marker>
+  <marker id="mh" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" style="fill:var(--thread)"/></marker>
+  <marker id="mw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" style="fill:var(--week)"/></marker>
+</defs>
+
+<!-- panels -->
+<rect class="pnl" x="36" y="96" width="264" height="544" rx="10"/><text class="pt" x="48" y="118">Spotify</text>
+<rect class="pnl" x="324" y="96" width="288" height="360" rx="10"/><text class="pt" x="340" y="118">Щодня 20:45 Kyiv</text>
+<rect class="pnl" x="324" y="576" width="288" height="128" rx="10"/><text class="pt" x="340" y="598">Аналіз лайків</text>
+<rect class="pnl" x="636" y="96" width="288" height="392" rx="10"/><text class="pt" x="652" y="118">Дослідницькі треди</text>
+<rect class="pnl" x="948" y="96" width="232" height="560" rx="10"/><text class="pt" x="960" y="118">Карта · раз на тиждень</text>
+
+<!-- Arthur -->
+<rect class="bx" x="48" y="16" width="240" height="60" rx="30" style="stroke:var(--you);stroke-width:2"/>
+<text class="t" x="168" y="42" text-anchor="middle">Arthur</text>
+<text class="s" x="168" y="60" text-anchor="middle">слухає, лайкає, пише в тредах</text>
+
+<!-- Spotify boxes -->
+<rect class="bx" x="48" y="132" width="112" height="72" rx="8"/>
+<text class="t" x="60" y="156">❤ Liked</text><text class="s" x="60" y="174">твої лайки</text><text class="s" x="60" y="190">= «подобається»</text>
+<rect class="bx" x="176" y="132" width="112" height="72" rx="8"/>
+<text class="t" x="188" y="156">➕ Дослідити</text><text class="s" x="188" y="174">«хочу про це</text><text class="s" x="188" y="190">дізнатися більше»</text>
+
+<rect class="bx" x="48" y="296" width="240" height="88" rx="8"/>
+<text class="t" x="60" y="320">★ &lt;жанр&gt; · 15 плейлистів</text>
+<text class="s" x="60" y="340">твої лайки, розкладені по жанрах:</text>
+<text class="s" x="60" y="356">★ Trip-Hop &amp; Downtempo, ★ Jazz…</text>
+<text class="s" x="60" y="372">треди сюди нічого не додають</text>
+
+<rect class="bx" x="48" y="508" width="240" height="108" rx="8"/>
+<text class="t" x="60" y="532">Explorer · &lt;тема&gt;</text>
+<text class="s" x="60" y="552">по одному на тред: Dub &amp; Reggae,</text>
+<text class="s" x="60" y="568">Trip-Hop, Jazz, Radiohead…</text>
+<text class="s" x="60" y="584">рекомендації, 2–4 треки з альбому,</text>
+<text class="s" x="60" y="600">обкладинка-граф, опис що слухати</text>
+
+<!-- intake -->
+<rect class="bx" x="340" y="132" width="256" height="176" rx="8" style="stroke:var(--auto)"/>
+<text class="t" x="352" y="156">Щоденний intake</text>
+<text class="s" x="352" y="174">тред «Set up Spotify listening playlists»</text>
+<text class="lb" x="352" y="200">1. Забирає нові треки з ➕ Дослідити</text>
+<text class="lb" x="366" y="216">і очищує плейлист</text>
+<text class="lb" x="352" y="240">2. Знаходить нові лайки</text>
+<text class="lb" x="352" y="264">3. Кладе кожен лайк в один ★</text>
+<text class="lb" x="352" y="288">4. Надсилає список координатору</text>
+
+<rect class="bx" x="340" y="372" width="256" height="68" rx="8"/>
+<text class="t" x="352" y="396">Координатор (чат проєкту)</text>
+<text class="s" x="352" y="414">вирішує, якому треду що віддати,</text>
+<text class="s" x="352" y="430">або відкриває новий тред</text>
+
+<!-- sandbox -->
+<rect class="bx" x="340" y="612" width="256" height="80" rx="8"/>
+<text class="t" x="352" y="634">Liked Songs sandbox + Insights</text>
+<text class="s" x="352" y="652">знімок 650 лайків → clusters/*.md;</text>
+<text class="s" x="352" y="668">спільні продюсери й патерни смаку</text>
+<text class="s" x="352" y="684">→ insights.md</text>
+
+<!-- threads -->
+<rect class="bx" x="652" y="132" width="256" height="340" rx="8" style="stroke:var(--thread)"/>
+<text class="t" x="664" y="156">Тред на жанр / сцену</text>
+<text class="s" x="664" y="176">Dub &amp; Reggae · Neo-Soul · Trip-Hop</text>
+<text class="s" x="664" y="192">Jazz · Radiohead · Brian Eno &amp; Ambient</text>
+<text class="s" x="664" y="208">Melodic house · Fred again.. · …</text>
+<text class="lb" x="664" y="240">Що робить тред:</text>
+<text class="s" x="664" y="258">• досліджує й говорить з тобою</text>
+<text class="s" x="664" y="274">• коротко знайомить з новими артистами</text>
+<text class="s" x="664" y="290">• рекомендує в свій Explorer-плейлист</text>
+<text class="s" x="664" y="306">• записує твої реакції твоїми словами</text>
+<text class="s" x="664" y="322">• саму карту не чіпає</text>
+<text class="lb" x="664" y="354">Сплячі треди</text>
+<text class="s" x="664" y="372">(post-punk, rock, modern hip-hop)</text>
+<text class="s" x="664" y="388">прокидаються, коли ти додаєш їхній</text>
+<text class="s" x="664" y="404">жанр у ➕ Дослідити або пишеш у тред</text>
+<text class="lb" x="664" y="436">Новий шар (напр. Eno → ambient)</text>
+<text class="s" x="664" y="454">= окремий новий тред</text>
+
+<!-- weekly -->
+<rect class="bx" x="960" y="132" width="208" height="76" rx="8"/>
+<text class="t" x="972" y="156">inbox/pending</text>
+<text class="s" x="972" y="174">запропоновані зміни</text>
+<text class="s" x="972" y="190">рядками *.jsonl</text>
+<rect class="bx" x="960" y="268" width="208" height="92" rx="8" style="stroke:var(--week)"/>
+<text class="t" x="972" y="292">П'ятниця 18:00 Kyiv</text>
+<text class="s" x="972" y="310">тижневий апдейт: скрипт</text>
+<text class="s" x="972" y="326">застосовує зміни; перша</text>
+<text class="s" x="972" y="342">п'ятниця 13.11</text>
+<rect class="bx" x="960" y="416" width="208" height="60" rx="8"/>
+<text class="t" x="972" y="440">data/ (база)</text>
+<text class="s" x="972" y="458">артисти, жанри, зв'язки</text>
+<rect class="bx" x="960" y="532" width="208" height="108" rx="8"/>
+<text class="t" x="972" y="556">Карта (v10)</text>
+<text class="s" x="972" y="574">граф жанрів, артистів, релізів</text>
+<text class="s" x="972" y="590">клік по зв'язку двох жанрів →</text>
+<text class="s" x="972" y="606">панель: хто на кого вплинув</text>
+<text class="s" x="972" y="622">і що в них спільного</text>
+
+<!-- arrows: you -->
+<path class="y" d="M104 76 V130" marker-end="url(#my)"/><text class="lb ly" x="110" y="108">лайкаєш</text>
+<path class="y" d="M232 76 V130" marker-end="url(#my)"/><text class="lb ly" x="238" y="108">додаєш</text>
+<path class="y" d="M288 46 H866 V130" marker-end="url(#my)"/><text class="lb ly" x="430" y="40">пишеш у треді: враження, питання, «ще такого»</text>
+<path class="y" d="M48 562 H24 V46 H46" marker-end="url(#my)"/>
+<text class="lb ly" transform="translate(18 470) rotate(-90)">слухаєш Explorer → лайкаєш → коло повторюється</text>
+
+<!-- arrows: daily -->
+<path class="a" d="M288 168 H338" marker-end="url(#ma)"/><text class="lb la" x="292" y="160">бере</text>
+<path class="a" d="M104 204 V232 H338" marker-end="url(#ma)"/><text class="lb la" x="176" y="226">нові лайки</text>
+<text class="lb la" x="298" y="330" text-anchor="start">сортує</text>
+<path class="a" d="M468 308 V370" marker-end="url(#ma)"/><text class="lb la" x="474" y="344">список</text>
+<path class="a" d="M596 406 H650" marker-end="url(#ma)"/><text class="lb la" x="600" y="398">роздає</text>
+
+<!-- arrows: threads -->
+<path class="h" d="M700 472 V560 H290" marker-end="url(#mh)"/><text class="lb lh" x="320" y="552">рекомендації + пояснення в треді, що і навіщо слухати</text>
+<path class="h" d="M596 650 H820 V474" marker-end="url(#mh)"/><text class="lb lh" x="604" y="642">контекст: що вже є в лайках</text>
+<path class="h" d="M908 170 H958" marker-end="url(#mh)"/><text class="lb lh" x="912" y="162">ops</text>
+
+<!-- arrows: weekly -->
+<path class="w" d="M1064 208 V266" marker-end="url(#mw)"/><text class="lb lw" x="1070" y="242">читає</text>
+<path class="w" d="M1064 360 V414" marker-end="url(#mw)"/><text class="lb lw" x="1070" y="392">оновлює</text>
+<path class="w" d="M1064 476 V530" marker-end="url(#mw)"/><text class="lb lw" x="1070" y="508">публікує</text>
+</svg>
+</div>
+
+<div class="cols">
+<section>
+  <h2>Що відбувається о 20:45</h2>
+  <ol>
+    <li><b>➕ Дослідити.</b> Усе, що ти додав туди за день, забирається в журнал, а сам плейлист очищується. Тож він завжди порожній зранку, і це нормально.</li>
+    <li><b>Лайки.</b> Береться все, що ти лайкнув після попереднього запуску.</li>
+    <li><b>★ плейлисти.</b> Кожен новий лайк лягає рівно в один ★ плейлист, той, що найкраще підходить за жанром. Дублікати пропускаються.</li>
+    <li><b>Роздача.</b> Список іде координатору. Треки з ➕ Дослідити він віддає відповідному треду (сплячий тред прокидається) або відкриває новий. Лайки передаються тредам як твій фідбек, тільки коли стосуються їхньої теми чи карти.</li>
+    <li><b>Далі треди.</b> Тред відповідає тобі у своїй гілці і, якщо треба, додає рекомендації в свій Explorer-плейлист.</li>
+  </ol>
+</section>
+<section>
+  <h2>Що робиш ти</h2>
+  <ul>
+    <li><b>Лайк</b> = «подобається». Він потрапить у ★ і стане фідбеком для тредів.</li>
+    <li><b>➕ Дослідити</b> = «хочу копнути глибше». З цього народжуються нові дослідження й рекомендації.</li>
+    <li><b>Пишеш у тред</b>, коли хочеш поговорити, щось уточнити або дати реакцію словами.</li>
+    <li>Якщо Spotify раптом не працює, можна просто кинути посилання в чат проєкту.</li>
+  </ul>
+  <h2 style="margin-top:22px">Хто куди пише</h2>
+  <div class="tw"><table>
+    <tr><td>★ &lt;жанр&gt;</td><td>тільки щоденний intake, твоїми лайками</td></tr>
+    <tr><td>Explorer · …</td><td>тільки свій тред, рекомендаціями</td></tr>
+    <tr><td>inbox/pending</td><td>треди, пропозиціями змін</td></tr>
+    <tr><td>data/ і карта</td><td>тільки п'ятничний апдейт</td></tr>
+  </table></div>
+</section>
+</div>
+</main>

@@ -1,0 +1,1 @@
+{"title": "Explorer · Brian Eno & Ambient", "center": "ambient", "groups": [{"node": "Obscure", "kind": "label", "artists": ["Brian Eno"]}, {"node": "piano", "artists": ["Harold Budd"]}, {"node": "Fred again..", "artists": []}], "links": [["Obscure", "piano"]], "hue": 185}

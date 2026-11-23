@@ -1,0 +1,9 @@
+# Thread "Explore post-punk and new wave", 2026-11-10: Placebo (This Picture) from Дослідити + Arthur's like. Recommendations live in Spotify "Explorer · Post-Punk & New Wave", not in the map.
+{"op":"entity","id":"genre:post-punk","type":"genre","name":"Post-Punk","years":{"from":1978,"approx":true},"country":"GB","summary":"Панк, що став похмурим і експериментальним: холодний бас попереду, простір, синтезатори. Звідси готика, new wave і Depeche Mode-темрява.","attrs":{"genres":["genre:rock"]}}
+{"op":"entity","id":"artist:placebo","type":"artist","name":"Placebo","country":"GB","years":{"from":1994},"summary":"Лондонське тріо Brian Molko і Stefan Olsdal: андрогінний глем Bowie, готична темрява і гітарний нерв 90-х."}
+{"op":"entity","id":"release:sleeping-with-ghosts","type":"release","name":"Sleeping With Ghosts","years":{"from":2003},"summary":"Четвертий альбом Placebo, де гітари вперше обростають електронікою й семплами.","attrs":{"artist":"artist:placebo","releaseType":"album"}}
+{"op":"entity","id":"track:this-picture","type":"track","name":"This Picture","attrs":{"artist":"artist:placebo","release":"release:sleeping-with-ghosts"}}
+{"op":"relation","type":"in_genre","from":"artist:placebo","to":"genre:alt-rock","why":"Placebo — один з голосів британського альт-року 90-х поза бритпопом."}
+{"op":"relation","type":"influenced","from":"genre:post-punk","to":"genre:alt-rock","why":"Альт-рок 80–90-х виріс із post-punk: темний настрій, бас у центрі, відмова від рок-пафосу.","via":["artist:placebo"]}
+{"op":"relation","type":"influenced","from":"genre:post-punk","to":"genre:synth-pop","why":"Synth-pop узяв у post-punk холод і похмурість, замінивши гітари синтезаторами.","via":["artist:depeche-mode"]}
+{"op":"note","id":"note-2026-11-10-placebo","date":"2026-11-10","source":"Arthur added Placebo — This Picture to ➕ Дослідити and liked it on Spotify (intake 2026-11-10).","reactions":[],"statuses":{"track:this-picture":"liked"}}

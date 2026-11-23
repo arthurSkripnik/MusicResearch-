@@ -1,0 +1,7 @@
+# Thread "Explore noir rock", intake 2026-11-18: Arthur put Leonard Cohen I'm Your Man + You Want It Darker into ➕ Дослідити; liked You Want It Darker only (not I'm Your Man).
+{"op":"entity","id":"artist:leonard-cohen","type":"artist","name":"Leonard Cohen","country":"CA","years":{"from":1967,"to":2016},"summary":"Канадський поет, що став співаком у 33. Від тихого фолку 70-х до синт-шансону 80-х і пізніх «шепітних» альбомів з найнижчим голосом у поп-музиці."}
+{"op":"entity","id":"release:you-want-it-darker","type":"release","name":"You Want It Darker","years":{"from":2016},"summary":"Останній прижиттєвий альбом Cohen, вийшов за 19 днів до смерті. Продюсер — син Adam Cohen; хор синагоги Монреаля, орган, шепіт.","attrs":{"artist":"artist:leonard-cohen","releaseType":"album"}}
+{"op":"entity","id":"track:you-want-it-darker","type":"track","name":"You Want It Darker","attrs":{"artist":"artist:leonard-cohen","release":"release:you-want-it-darker"}}
+{"op":"relation","type":"in_genre","from":"artist:leonard-cohen","to":"genre:noir-rock","why":"Пізній Cohen: низький голос, мінімум інструментів, темрява."}
+{"op":"relation","type":"influenced","from":"artist:leonard-cohen","to":"artist:nick-cave","why":"Cave називає Cohen головним впливом; записав Avalanche на першому сольному альбомі."}
+{"op":"note","id":"note-2026-11-18-noir-rock-cohen","date":"2026-11-18","source":"➕ Дослідити: I'm Your Man, You Want It Darker; ❤ You Want It Darker (I'm Your Man не лайкнув)","reactions":[],"statuses":{"track:you-want-it-darker":"liked"}}

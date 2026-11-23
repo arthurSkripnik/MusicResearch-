@@ -1,0 +1,23 @@
+[
+{"id":"city:bristol","type":"city","name":"Bristol","country":"GB","summary":"Портове місто із сильною карибською громадою та sound-system культурою. Батьківщина Wild Bunch, Massive Attack, Portishead, Tricky, Roni Size.","confidence":"established","author":"claude"},
+{"id":"city:london","type":"city","name":"London","country":"GB","summary":"Дім Ninja Tune, Mo’ Wax, XL, Mute, Talkin’ Loud і сцени acid jazz.","confidence":"established","author":"claude"},
+{"id":"city:sheffield","type":"city","name":"Sheffield","country":"GB","summary":"Місто, де заснували Warp і де звучав bleep techno.","confidence":"established","author":"claude"},
+{"id":"city:brighton","type":"city","name":"Brighton","country":"GB","summary":"Центр big beat: лейбл Skint, Fatboy Slim.","confidence":"established","author":"claude"},
+{"id":"city:braintree","type":"city","name":"Braintree","country":"GB","summary":"Місто в Ессексі, де виникли The Prodigy.","confidence":"established","author":"claude"},
+{"id":"city:leeds","type":"city","name":"Leeds","country":"GB","confidence":"established","author":"claude"},
+{"id":"city:manchester","type":"city","name":"Manchester","country":"GB","confidence":"established","author":"claude"},
+{"id":"city:new-york","type":"city","name":"New York","country":"US","confidence":"established","author":"claude"},
+{"id":"city:chicago","type":"city","name":"Chicago","country":"US","confidence":"established","author":"claude"},
+{"id":"city:detroit","type":"city","name":"Detroit","country":"US","confidence":"established","author":"claude"},
+{"id":"city:kingston","type":"city","name":"Kingston","country":"JM","confidence":"established","author":"claude"},
+{"id":"city:berlin","type":"city","name":"Berlin","country":"DE","confidence":"established","author":"claude"},
+{"id":"city:vienna","type":"city","name":"Vienna","country":"AT","confidence":"established","author":"claude"},
+{"id":"city:reykjavik","type":"city","name":"Reykjavík","country":"IS","confidence":"established","author":"claude"},
+{"id":"city:tokyo","type":"city","name":"Tokyo","country":"JP","confidence":"established","author":"claude"},
+{"id":"city:dublin","type":"city","name":"Dublin","country":"IE","confidence":"established","author":"claude"},
+{"id":"city:kyiv","type":"city","name":"Kyiv","country":"UA","confidence":"established","author":"claude"},
+{"id":"city:dallas","type":"city","name":"Dallas","country":"US","summary":"Рідне місто Еріки Баду.","confidence":"established","author":"claude"},
+{"id":"city:philadelphia","type":"city","name":"Philadelphia","country":"US","summary":"Місто The Roots, Questlove і Джеймса Пойзера.","confidence":"established","author":"claude"},
+{"id":"city:mexico-city","type":"city","name":"Mexico City","country":"MX","confidence":"established","author":"claude","summary":"База LATIN MAFIA; тут же дописали 9 months & 50 hours під час 50-годинного стріму."},
+{"confidence":"established","author":"claude","id":"city:rio-de-janeiro","type":"city","name":"Rio de Janeiro","country":"BR","summary":"Місто самби, босанови й funk carioca."}
+]

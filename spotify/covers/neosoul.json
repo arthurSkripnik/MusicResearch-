@@ -1,0 +1,1 @@
+{"title": "Explorer · Neo-Soul & Soulquarians", "center": "neo-soul", "groups": [{"node": "Soulquarians", "kind": "scene", "artists": ["D'Angelo", "Erykah Badu"]}, {"node": "70s soul", "artists": ["Bill Withers", "Curtis Mayfield"]}, {"node": "retro soul", "artists": ["Michael Kiwanuka"]}], "links": [["70s soul", "retro soul"]], "hue": 22}
