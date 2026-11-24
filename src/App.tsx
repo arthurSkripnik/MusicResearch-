@@ -2,6 +2,8 @@ import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore
 import { repo } from './lib/repository';
 import { DEFAULT_FILTERS, inProducerLayer, isTopGenre, topGenresOf, stylesOf, genreLinks, influenceOf, type Filters } from './lib/graph';
 import { GraphView, type GraphHandle } from './components/GraphView';
+import { ZoomView } from './views/ZoomView';
+import { RiverView } from './views/RiverView';
 import { DetailPanel } from './components/DetailPanel';
 import { SearchPalette } from './components/SearchPalette';
 import { EntityForm, RelationForm } from './components/Forms';
@@ -12,10 +14,20 @@ import { computeBridge } from './lib/bridges';
 import { loadPref, savePref } from './lib/prefs';
 
 type Mode = 'history' | 'personal';
+type View = 'zoom' | 'river' | 'graph';
+const VIEWS: [View, string, string][] = [['zoom', 'Наближення', '◎'], ['river', 'Ріка', '≋'], ['graph', 'Граф', '⋔']];
+export type Sheet = 'peek' | 'half' | 'full';
 
+// On a phone the card is a bottom sheet with three heights; the map keeps the part above it.
+const HEADER_M = 48; const TABBAR_M = 56;
+export function sheetPx(sheet: Sheet) {
+  const stage = window.innerHeight - HEADER_M - TABBAR_M;
+  return sheet === 'peek' ? Math.min(210, Math.round(stage * 0.4)) : sheet === 'half' ? Math.round(stage * 0.62) : stage - 6;
+}
+let currentSheet: Sheet = 'peek';
 function panelInset() {
   const mobile = window.innerWidth <= 760;
-  return { right: mobile ? 0 : 420, bottom: mobile ? Math.round(window.innerHeight * 0.55) : 0 };
+  return { right: mobile ? 0 : 420, bottom: mobile ? sheetPx(currentSheet) : 0 };
 }
 
 
@@ -23,6 +35,7 @@ export default function App() {
   const snap = useSyncExternalStore(repo.subscribe, repo.getSnapshot);
   const graph = useRef<GraphHandle>(null);
   const [mode, setMode] = useState<Mode>(() => loadPref('mode', 'history'));
+  const [view, setView] = useState<View>(() => loadPref('view', 'zoom'));
   // what is open lives only while the page is open: every visit starts from the genres
   const [expanded, setExpanded] = useState<Set<string>>(() => new Set());
   const [showAll, setShowAll] = useState(false);
@@ -39,9 +52,16 @@ export default function App() {
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
+  const [sheet, setSheet] = useState<Sheet>('peek');
+  const [hintSeen, setHintSeen] = useState(() => loadPref('graphHintSeen', false));
+  currentSheet = sheet;
   const personal = mode === 'personal';
+  const mineCount = useMemo(() => new Set([...Object.keys(snap.journal.statuses), ...snap.journal.reactions.map((r) => r.target)]).size, [snap]);
+  useEffect(() => { setSheet('peek'); }, [selected]);
+  const seeHint = () => { if (!hintSeen) { setHintSeen(true); savePref('graphHintSeen', true); } };
 
   useEffect(() => savePref('mode', mode), [mode]);
+  useEffect(() => savePref('view', view), [view]);
   useEffect(() => savePref('producers', filters.producers), [filters.producers]);
   useEffect(() => { if (!toast) return; const t = setTimeout(() => setToast(null), 2600); return () => clearTimeout(t); }, [toast]);
 
@@ -133,6 +153,9 @@ export default function App() {
       return;
     }
     setPathEnds(null); setBridge(null); setBridgeLit(null);
+    // the zoom and river views only need the selection; levels and neighbourhoods belong to the graph
+    if (view !== 'graph') { setSelected(id); return; }
+    seeHint();
     const e = snap.entities.get(id);
     // a top-level genre opens into its styles first; a second tap selects it
     if (isTopGenre(e) && openGenre !== id && !showAll && stylesOf(snap, id).length) {
@@ -147,7 +170,21 @@ export default function App() {
     setSelected(id);
     // the neighbourhood is shown only while the node is selected: nothing piles up
     setExpanded(new Set([id, ...neighbours(id)]));
-  }, [pathFrom, selected, snap, openGenre, showAll, neighbours]);
+  }, [pathFrom, selected, snap, openGenre, showAll, neighbours, view, hintSeen]);
+
+  // switching views keeps what was selected; the graph opens it at its own level
+  const switchView = (v: View) => {
+    setPathFrom(null); setPathEnds(null); setBridge(null); setBridgeLit(null); setMenuOpen(false); setFiltersOpen(false);
+    if (v === view) return;
+    setView(v);
+  };
+  const carried = useRef<string | null>(null);
+  useEffect(() => {
+    if (view !== 'graph' || !carried.current) return;
+    const id = carried.current; carried.current = null; setSelected(null);
+    const t = setTimeout(() => select(id), 30);
+    return () => clearTimeout(t);
+  }, [view]);
 
   const back = useCallback(() => {
     setPathEnds(null); setPathFrom(null); setBridge(null); setBridgeLit(null);
@@ -169,7 +206,7 @@ export default function App() {
 
   // camera follows the selection once its neighbourhood is on the map
   useEffect(() => {
-    if (!selected) return;
+    if (!selected || view !== 'graph') return;
     const t = setTimeout(() => graph.current?.focusOn([selected], panelInset()), 60);
     return () => clearTimeout(t);
   }, [selected]);
@@ -178,6 +215,7 @@ export default function App() {
     const t = setTimeout(() => graph.current?.focusOn(path.nodes, panelInset(), false), 60);
     return () => clearTimeout(t);
   }, [path]);
+  useEffect(() => { if ((pathFrom || pathEnds) && view !== 'graph') setView('graph'); }, [pathFrom, pathEnds, view]);
   const openBridge = useCallback((a: string, b: string) => {
     setSelected(null); setPathEnds(null); setPathFrom(null); setBridgeLit(null); setBridge([a, b]);
   }, []);
@@ -226,46 +264,37 @@ export default function App() {
   };
 
   return (
-    <div className={`app ${personal ? 'is-personal' : ''} ${sel || path ? 'has-panel' : ''}`}>
+    <div className={`app ${personal ? 'is-personal' : ''} ${sel || path || bridge ? 'has-panel' : ''} ${sel && !path ? `sheet-${sheet}` : ''}`}
+      style={{ ['--sheet-h' as string]: `${sel && !path ? sheetPx(sheet) : sheetPx('half')}px` }}>
       <header className="topbar">
         <div className="brand">
           <span className="brand-mark">Music Explorer</span>
           <span className="brand-sub">{snap.entities.size} вузлів · {repo.storage === 'cloud' ? 'зміни зберігаються' : 'зміни лише в цьому браузері'}</span>
         </div>
-        <button className="searchbox" onClick={() => setSearch('find')}>
-          <span>Пошук</span><kbd>⌘K</kbd>
-        </button>
-        <div className="seg" role="tablist" aria-label="Режим">
-          <button role="tab" aria-selected={!personal} className={!personal ? 'on' : ''} onClick={() => setMode('history')}>Історія</button>
-          <button role="tab" aria-selected={personal} className={personal ? 'on' : ''} onClick={() => setMode('personal')}>Моє</button>
-        </div>
+        <nav className="viewtabs" role="tablist" aria-label="Вигляд">
+          {VIEWS.map(([v, label, glyph]) => <button key={v} role="tab" aria-selected={view === v} className={view === v ? 'on' : ''}
+            onClick={() => { if (v === 'graph' && selected) carried.current = selected; switchView(v); }}><i aria-hidden>{glyph}</i>{label}</button>)}
+        </nav>
         <div className="tools">
-          <button className={`btn ghost ${filtersOpen ? 'pressed' : ''}`} onClick={() => { setFiltersOpen(!filtersOpen); setMenuOpen(false); }}>
-            Фільтри{activeFilterCount ? ` · ${activeFilterCount}` : ''}
+          <button className="searchbox" onClick={() => setSearch('find')} aria-label="Пошук">
+            <span className="sb-glyph" aria-hidden>⌕</span><span className="sb-text">Пошук</span><kbd>⌘K</kbd>
           </button>
-          <button className="btn ghost" onClick={() => setShowAll(!showAll)} title="Показати всі вузли разом (до закриття сторінки) або повернутися до жанрів">
-            {showAll ? 'Жанри' : 'Усе'}
+          <button className={`mine-chip ${personal ? 'on' : ''}`} aria-pressed={personal} onClick={() => setMode(personal ? 'history' : 'personal')}
+            title="Показати на карті лише те, що має мій статус чи реакцію">
+            <span className="mc-dot" aria-hidden />Моє<span className="mc-n">{mineCount}</span>
           </button>
-          <button className={`btn ghost layer-btn ${filters.producers ? 'pressed on' : ''}`} aria-pressed={filters.producers}
-            onClick={() => {
-              const on = !filters.producers;
-              setFilters({ ...filters, producers: on });
-              setToast(on ? 'Шар продюсерів увімкнено' : 'Шар продюсерів вимкнено');
-              if (on) setTimeout(() => graph.current?.focusOn(
-                [...snap.entities.values()].filter((e) => e.type === 'producer').map((e) => e.id), panelInset()), 120);
-            }}
-            title="Продюсери і звукорежисери, що з’єднують записи різних артистів">
-            <span className="dot dot-producer" />Продюсери
-          </button>
-          <button className="btn" onClick={() => setForm({ kind: 'entity' })}>+ Додати</button>
           <button className="icon-btn" aria-label="Меню" onClick={() => { setMenuOpen(!menuOpen); setFiltersOpen(false); }}>⋯</button>
         </div>
         {menuOpen && (
           <div className="popover menu">
-            <button onClick={() => { graph.current?.fit(); setMenuOpen(false); }}>Вмістити карту в екран</button>
-            <button onClick={() => { setExpanded(new Set()); setShowAll(false); setOpenGenre(null); setSelected(null); setMenuOpen(false); }}>Згорнути до жанрів</button>
-            <button onClick={() => { graph.current?.relayout(); setMenuOpen(false); }}>Перерахувати розкладку</button>
+            <button onClick={() => { setForm({ kind: 'entity' }); setMenuOpen(false); }}>+ Додати вузол</button>
             <hr />
+            {view === 'graph' && <>
+              <button onClick={() => { graph.current?.fit(); setMenuOpen(false); }}>Вмістити карту в екран</button>
+              <button onClick={() => { setExpanded(new Set()); setShowAll(false); setOpenGenre(null); setSelected(null); setMenuOpen(false); }}>Згорнути до жанрів</button>
+              <button onClick={() => { graph.current?.relayout(); setMenuOpen(false); }}>Перерахувати розкладку</button>
+              <hr />
+            </>}
             <button onClick={doExport}>Експорт моїх даних (JSON)</button>
             <button onClick={doImport}>Імпорт з JSON…</button>
             <hr />
@@ -274,17 +303,40 @@ export default function App() {
             }}>Скинути мої зміни</button>
           </div>
         )}
-        {filtersOpen && <FilterPopover filters={filters} setFilters={setFilters} personal={personal} />}
       </header>
 
-      <main className="stage">
-        <GraphView ref={graph} snap={snap} visible={visible} filters={filters} personal={personal} top={!showAll && !openGenre}
+      <main className={`stage view-${view}`}>
+        {view === 'zoom' && <ZoomView snap={snap} selected={selected} personal={personal} inset={panelInset()} sheet={sheet}
+          onSelect={select} onBackground={() => setSelected(null)} />}
+        {view === 'river' && <RiverView snap={snap} selected={selected} personal={personal}
+          onSelect={select} onBackground={() => setSelected(null)} />}
+        {view === 'graph' && <><GraphView ref={graph} snap={snap} visible={visible} filters={filters} personal={personal} top={!showAll && !openGenre}
           bundle={openGenre && !showAll ? { center: openGenre, members: stylesOf(snap, openGenre), ext: bundleExt } : null}
           selected={selected} path={path} onSelect={select} onExpand={expand} onBridge={openBridge}
           onBackground={() => { setSelected(null); setExpanded(new Set()); setPathEnds(null); setBridge(null); setBridgeLit(null); }} />
 
-        {!showAll && (
-          <nav className="levels" aria-label="Рівень карти">
+        <nav className="levels" aria-label="Рівень карти">
+          <div className="lv-tools">
+            <button className={`chip ${filtersOpen ? 'on' : ''}`} onClick={() => { setFiltersOpen(!filtersOpen); setMenuOpen(false); }}>
+              Фільтри{activeFilterCount ? ` · ${activeFilterCount}` : ''}
+            </button>
+            <button className={`chip ${showAll ? 'on' : ''}`} onClick={() => setShowAll(!showAll)} title="Показати всі вузли разом (до закриття сторінки) або повернутися до жанрів">
+              {showAll ? '← До жанрів' : 'Усе'}
+            </button>
+            <button className={`chip layer-chip ${filters.producers ? 'on' : ''}`} aria-pressed={filters.producers}
+              onClick={() => {
+                const on = !filters.producers;
+                setFilters({ ...filters, producers: on });
+                setToast(on ? 'Шар продюсерів увімкнено' : 'Шар продюсерів вимкнено');
+                if (on) setTimeout(() => graph.current?.focusOn(
+                  [...snap.entities.values()].filter((e) => e.type === 'producer').map((e) => e.id), panelInset()), 120);
+              }}
+              title="Продюсери і звукорежисери, що з’єднують записи різних артистів">
+              <span className="dot dot-producer" />Продюсери
+            </button>
+          </div>
+          {filtersOpen && <FilterPopover filters={filters} setFilters={setFilters} personal={personal} />}
+          {!showAll && <>
             <div className="lv-row">
               {(openGenre || selected) && <button className="lv-back" onClick={back}>← Назад</button>}
               <div className="lv-crumbs">
@@ -303,9 +355,10 @@ export default function App() {
                 })}
               </div>
             )}
-            {!openGenre && !selected && <div className="lv-hint">Стрілка — вплив: хто кого сформував, цифра — скільки зв’язків між стилями. Тапни жанр, щоб розкрити, або стрілку — щоб побачити місток.</div>}
-          </nav>
-        )}
+            {!openGenre && !selected && !hintSeen && <div className="lv-hint">Стрілка — вплив: хто кого сформував, цифра — скільки зв’язків між стилями. Тапни жанр, щоб розкрити, або стрілку — щоб побачити місток.
+              <button className="icon-btn tiny" aria-label="Зрозуміло" onClick={seeHint}>×</button></div>}
+          </>}
+        </nav>
 
         {pathFrom && (
           <div className="banner">
@@ -317,10 +370,11 @@ export default function App() {
 
         <Legend personal={personal} producers={filters.producers} />
         <DecadeBar filters={filters} setFilters={setFilters} />
+        </>}
       </main>
 
       {sel && !path && (
-        <DetailPanel entity={sel} snap={snap} hiddenNeighbours={hiddenNeighbours}
+        <DetailPanel entity={sel} snap={snap} hiddenNeighbours={hiddenNeighbours} sheet={sheet} onSheet={setSheet}
           onNavigate={navigate} onExpand={expand} onClose={() => setSelected(null)}
           onPathFrom={(id) => { setPathFrom(id); setToast('Тепер клікни другий вузол'); }}
           onAddRelation={(id) => setForm({ kind: 'relation', from: id })} />

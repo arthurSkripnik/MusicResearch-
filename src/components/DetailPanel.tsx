@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import type { Entity, Relation, Status, Polarity, ReactionScope, NegativeReason, ListeningAxis, ClaimClass } from '../data/schema';
 import {
   typeLabel, VINYL_LABEL, RELATION_LABEL, RELATION_CLASS, CONFIDENCE_LABEL, CLASS_LABEL, STATUS_LABEL, LISTENING_STATUSES,
@@ -16,7 +16,19 @@ interface Props {
   onPathFrom(id: string): void;
   onAddRelation(id: string): void;
   onClose(): void;
+  sheet?: 'peek' | 'half' | 'full';
+  onSheet?(s: 'peek' | 'half' | 'full'): void;
 }
+
+/** Where «Слухати» goes: the exact Spotify record when the map has one, otherwise a Spotify search. */
+export function listenUrl(e: Entity, snap: Snapshot): string {
+  const sp = SPOTIFY[e.id];
+  if (sp) return sp.link;
+  const artist = e.attrs?.artist ? snap.entities.get(e.attrs.artist)?.name : '';
+  return `https://open.spotify.com/search/${encodeURIComponent([artist, e.name].filter(Boolean).join(' '))}`;
+}
+const UP = { peek: 'half', half: 'full', full: 'full' } as const;
+const DOWN = { peek: null, half: 'peek', full: 'half' } as const;
 
 const CLASS_ORDER: ClaimClass[] = ['fact', 'history', 'interpretation', 'personal'];
 
@@ -82,7 +94,30 @@ function Cover({ e, snap }: { e: Entity; snap: Snapshot }) {
   );
 }
 
-export function DetailPanel({ entity: e, snap, onNavigate, onPathFrom, onAddRelation, onClose }: Props) {
+export function DetailPanel({ entity: e, snap, onNavigate, onPathFrom, onAddRelation, onClose, sheet = 'half', onSheet }: Props) {
+  const ref = useRef<HTMLElement>(null);
+  const drag = useRef<{ y: number; dy: number } | null>(null);
+  const phone = () => window.innerWidth <= 760;
+  // drag the sheet by its head (anywhere while it only peeks): up opens it further, down lowers or closes it
+  const onDown = (ev: React.PointerEvent) => {
+    if (!phone() || !onSheet) return;
+    if (sheet !== 'peek' && !(ev.target as Element).closest('.panel-head')) return;
+    if ((ev.target as Element).closest('a, button:not(.sheet-grab), input, textarea, select')) return;
+    drag.current = { y: ev.clientY, dy: 0 };
+  };
+  const onMove = (ev: React.PointerEvent) => {
+    const d = drag.current; if (!d) return;
+    d.dy = ev.clientY - d.y;
+    if (ref.current) ref.current.style.transform = d.dy > 0 ? `translateY(${d.dy}px)` : '';
+  };
+  const onUp = () => {
+    const d = drag.current; drag.current = null;
+    if (ref.current) ref.current.style.transform = '';
+    if (!d || !onSheet) return;
+    if (d.dy < -36) onSheet(UP[sheet]);
+    else if (d.dy > 48) { const n = DOWN[sheet]; if (n) onSheet(n); else onClose(); }
+  };
+
   const rels = useMemo(() => snap.relations.filter((r) => r.from === e.id || r.to === e.id), [snap.relations, e.id]);
   const grouped = useMemo(() => {
     const m = new Map<ClaimClass, Relation[]>();
@@ -102,7 +137,10 @@ export function DetailPanel({ entity: e, snap, onNavigate, onPathFrom, onAddRela
   const hyps = snap.hypotheses.filter((h) => h.related.includes(e.id));
 
   return (
-    <aside className="panel" aria-label={`Деталі: ${e.name}`}>
+    <aside ref={ref} className={`panel sheet sheet-${sheet}`} aria-label={`Деталі: ${e.name}`}
+      onPointerDown={onDown} onPointerMove={onMove} onPointerUp={onUp} onPointerCancel={onUp}>
+      {onSheet && <button className="sheet-grab" aria-label={sheet === 'full' ? 'Згорнути картку' : 'Розгорнути картку'}
+        onClick={() => onSheet(sheet === 'full' ? 'peek' : UP[sheet])} />}
       <header className="panel-head">
         <div className="eyebrow">
           <span className={`dot dot-${e.type}`} />{typeLabel(e)}
@@ -126,6 +164,10 @@ export function DetailPanel({ entity: e, snap, onNavigate, onPathFrom, onAddRela
         </p>
       )}
       {meta && <p className="meta mono">{meta}</p>}
+      <div className="quick">
+        <a className="btn listen" href={listenUrl(e, snap)} target="_blank" rel="noreferrer">▶ Слухати</a>
+        {onSheet && sheet === 'peek' && <button className="btn ghost more" onClick={() => onSheet('half')}>Детальніше ↑</button>}
+      </div>
       {e.aliases?.length ? <p className="meta">також: {e.aliases.join(', ')}</p> : null}
       {e.attrs?.discogs && <p className="meta">Discogs: {e.attrs.discogs}</p>}
       {snap.journal.vinyl?.[e.id] && <p className="meta">◉ {VINYL_LABEL[snap.journal.vinyl[e.id]]}</p>}
