@@ -2,6 +2,8 @@
 // Derived from the snapshot at runtime; nothing here is stored.
 import type { Snapshot } from './repository';
 import { isTopGenre, influenceOf } from './graph';
+import { GENRE_COLOR, rgba } from './palette';
+export { GENRE_COLOR, rgba };
 
 export interface VGenre { id: string; name: string; placeholder: boolean }
 export interface VStyle { id: string; name: string; genres: string[]; year?: number; artists: string[] }
@@ -121,4 +123,11 @@ export function riverYear(s: VStyle, m: VModel): { y: number; approx: boolean } 
   const sib = m.styles.filter((t) => t.year && t.genres.some((g) => s.genres.includes(g))).map((t) => t.year!);
   const y = sib.length ? Math.round(sib.reduce((a, b) => a + b, 0) / sib.length) : 1980;
   return { y, approx: true };
+}
+
+/** A genre's own colour, or for a style the colour of its first genre. */
+export function colorOf(id: string, m: VModel): string {
+  if (GENRE_COLOR[id]) return GENRE_COLOR[id];
+  const st = m.styles.find((s) => s.id === id);
+  return (st && GENRE_COLOR[st.genres[0]]) || '#8f877b';
 }

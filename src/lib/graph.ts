@@ -4,6 +4,7 @@ import type { Entity, EntityType, Relation, ClaimClass, Status, CountryCode } fr
 import { RELATION_CLASS, RELATION_LABEL } from '../data/schema';
 import type { Snapshot } from './repository';
 import { hiddenBridges } from './bridges';
+import { GENRE_COLOR } from './palette';
 
 // Hand-placed genre "islands": neighbouring traditions sit close, so the map is the same every time.
 export const GENRE_ANCHORS: Record<string, { x: number; y: number }> = {
@@ -184,6 +185,10 @@ export function buildElements(snap: Snapshot): ElementDefinition[] {
   const nstyles = new Map<string, number>();
   for (const e of snap.entities.values()) if (e.type === 'genre') for (const g of e.attrs?.genres ?? []) nstyles.set(g, (nstyles.get(g) ?? 0) + 1);
   for (const n of nodes) if (nstyles.has(n.data.id as string)) n.data.nstyles = nstyles.get(n.data.id as string);
+  // genres and their styles carry their genre's colour
+  const gcol = (id: string) => GENRE_COLOR[id] ?? GENRE_COLOR[(snap.entities.get(id)?.attrs?.genres ?? [])[0] ?? ''];
+  for (const n of nodes) { const c = snap.entities.get(n.data.id as string)?.type === 'genre' ? gcol(n.data.id as string) : undefined; if (c) { n.data.gcol = c; n.classes = `${n.classes ?? ''} gcol`; } }
+  for (const e of agg) { const c = gcol(e.data.source as string); if (c) { e.data.gcol = c; e.classes = `${e.classes ?? ''} gcol`; } }
   return [...nodes, ...edges, ...hidden, ...agg, ...xgEdges];
 }
 
@@ -311,6 +316,8 @@ export const stylesheet: StylesheetJson = [
     'label': 'data(weight)', 'font-size': 64, 'color': '#e3b9a8', 'text-background-opacity': 0, 'text-outline-color': C.bg,
     'text-outline-width': 6, 'min-zoomed-font-size': 3,
   } },
+  { selector: 'node.genre.gcol', style: { 'background-color': 'data(gcol)', 'border-color': 'data(gcol)' } },
+  { selector: 'edge.agg.gcol', style: { 'line-color': 'data(gcol)', 'target-arrow-color': 'data(gcol)' } },
   { selector: 'node.inring', style: { 'font-size': 30, 'min-zoomed-font-size': 3 } },
   { selector: 'node.ext', style: { 'background-opacity': 0.1, 'border-style': 'dashed', 'width': 110, 'height': 110, 'font-size': 26 } },
   { selector: 'edge.xg', style: { 'width': 'mapData(weight, 1, 3, 1.6, 4)', 'line-opacity': 0.55, 'line-style': 'solid',

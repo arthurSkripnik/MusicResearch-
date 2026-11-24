@@ -2,7 +2,7 @@
 // arcs show who shaped whom. Tapping a style opens its card.
 import { useEffect, useMemo, useRef } from 'react';
 import type { Snapshot } from '../lib/repository';
-import { viewModel, riverYear } from '../lib/views';
+import { viewModel, riverYear, colorOf, rgba } from '../lib/views';
 
 const Y0 = 1950; const Y1 = 2026; const PX = 17; const LH = 68; const LEFT = 70; const MID = LH / 2 + 7;
 const rx = (y: number) => (y < Y0 ? LEFT - 34 : LEFT + (y - Y0) * PX);
@@ -62,15 +62,15 @@ export function RiverView({ snap, selected, personal, onSelect, onBackground }: 
 
   return (
     <div className="river">
-      <div className="rv-lanes">{lanes.map((g, i) => <button key={g} style={{ top: i * LH + 3 }} onClick={() => onSelect(g)}>{snap.entities.get(g)?.name}</button>)}</div>
+      <div className="rv-lanes">{lanes.map((g, i) => <button key={g} style={{ top: i * LH + 3, color: colorOf(g, m) }} onClick={() => onSelect(g)}>{snap.entities.get(g)?.name}</button>)}</div>
       <div className="rv-scroll" ref={scroller} onClick={(e) => { if ((e.target as Element).tagName === 'svg') onBackground(); }}>
         <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Ріка: стилі за роками і впливи між ними">
           <defs>
             <marker id="rv-ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e8a13a" /></marker>
-            <marker id="rv-am" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d58a6c" fillOpacity=".5" /></marker>
+            <marker id="rv-am" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke" /></marker>
           </defs>
           {lanes.map((g, i) => <g key={g}>
-            <rect x={0} y={i * LH} width={W} height={LH} fill={i % 2 ? 'rgba(236,230,220,.02)' : 'transparent'} />
+            <rect x={0} y={i * LH} width={W} height={LH} fill={rgba(colorOf(g, m), 0.045)} />
             <line x1={0} x2={W} y1={(i + 1) * LH} y2={(i + 1) * LH} stroke="rgba(236,230,220,.08)" />
           </g>)}
           {Array.from({ length: 8 }, (_, i) => 1950 + i * 10).map((y) => <g key={y}>
@@ -82,13 +82,13 @@ export function RiverView({ snap, selected, personal, onSelect, onBackground }: 
             const pa = pos.get(a); const pb = pos.get(b); if (!pa || !pb) return null;
             const hot = !!sel && (a === sel || b === sel); const dx = pb.x - pa.x; const k = Math.max(30, Math.abs(dx) * 0.5);
             return <path key={i} d={`M${pa.x},${pa.y} C${pa.x + k},${pa.y} ${pb.x - k},${pb.y} ${pb.x - 7},${pb.y}`} fill="none"
-              stroke={hot ? '#e8a13a' : '#d58a6c'} strokeOpacity={sel ? (hot ? 0.95 : 0.07) : 0.3} strokeWidth={hot ? 2 : 1.2}
+              stroke={hot ? '#e8a13a' : colorOf(a, m)} strokeOpacity={sel ? (hot ? 0.95 : 0.07) : 0.35} strokeWidth={hot ? 2 : 1.2}
               markerEnd={hot ? 'url(#rv-ah)' : 'url(#rv-am)'} />;
           })}
           {lanes.filter((g) => m.influence.some(([a, b]) => a === g || b === g)).map((g) => {
             const p = pos.get(g)!;
             return <g key={g} className="rv-style" opacity={sel && sel !== g && !touches(g) ? 0.3 : 1} onClick={() => onSelect(g)} role="button" aria-label={snap.entities.get(g)?.name}>
-              <rect x={p.x - 5} y={p.y - 5} width={10} height={10} rx={2} fill="rgba(180,87,74,.5)" stroke={sel === g ? '#e8a13a' : '#b4574a'} />
+              <rect x={p.x - 5} y={p.y - 5} width={10} height={10} rx={2} fill={rgba(colorOf(g, m), 0.5)} stroke={sel === g ? '#e8a13a' : colorOf(g, m)} />
               <text x={p.x + 9} y={p.y + 4} className="rv-label rv-genre">{snap.entities.get(g)?.name}</text>
             </g>;
           })}
@@ -104,8 +104,8 @@ export function RiverView({ snap, selected, personal, onSelect, onBackground }: 
                   <circle cx={p.x} cy={oy} r={2.5} fill="#d58a6c" fillOpacity={0.5} /></g>;
               })}
               <circle cx={p.x} cy={p.y} r={r + 8} fill="transparent" />
-              <circle cx={p.x} cy={p.y} r={r} fill={mine ? 'rgba(232,161,58,.45)' : 'rgba(213,138,108,.35)'}
-                stroke={sel === s.id ? '#e8a13a' : '#d58a6c'} strokeWidth={sel === s.id ? 2.5 : 1.2} strokeDasharray={p.approx ? '3 2' : undefined} />
+              <circle cx={p.x} cy={p.y} r={r} fill={mine ? 'rgba(232,161,58,.45)' : rgba(colorOf(s.id, m), 0.35)}
+                stroke={sel === s.id ? '#e8a13a' : colorOf(s.id, m)} strokeWidth={sel === s.id ? 2.5 : 1.2} strokeDasharray={p.approx ? '3 2' : undefined} />
               <title>{s.name}</title>
               {shown.has(s.id) && <text x={p.x + r + 3} y={p.y + 4} className="rv-label">{s.name}</text>}
             </g>;

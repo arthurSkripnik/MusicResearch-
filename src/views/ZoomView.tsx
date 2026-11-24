@@ -2,9 +2,9 @@
 // territory and who shaped whom. Closest: artists. What you see depends on how close you look.
 import { useEffect, useRef } from 'react';
 import type { Snapshot } from '../lib/repository';
-import { viewModel, zoomLayout } from '../lib/views';
+import { viewModel, zoomLayout, colorOf, rgba } from '../lib/views';
 
-const C = { bg: '#12110f', ink: '#ece6dc', ink2: '#c9c1b5', muted: '#8f877b', genre: '#b4574a', style: '#cf8f78', accent: '#e8a13a' };
+const C = { bg: '#12110f', ink: '#ece6dc', ink2: '#c9c1b5', muted: '#8f877b', accent: '#e8a13a' };
 const L1: [number, number] = [0.32, 0.5]; const L2: [number, number] = [1.1, 1.5];
 const LEVEL_S = [0.2, 0.75, 1.8];
 const ramp = (v: number, [a, b]: [number, number]) => Math.max(0, Math.min(1, (v - a) / (b - a)));
@@ -114,12 +114,12 @@ export function ZoomView(props: Props) {
         hull.width = c.width; hull.height = c.height;
         mm.genres.forEach((g) => {
           const own = mm.styles.filter((s) => s.genres[0] === g.id); if (!own.length) return;
-          hctx.setTransform(dpr, 0, 0, dpr, 0, 0); hctx.clearRect(0, 0, W, H); hctx.fillStyle = '#b4574a';
+          hctx.setTransform(dpr, 0, 0, dpr, 0, 0); hctx.clearRect(0, 0, W, H); hctx.fillStyle = colorOf(g.id, mm);
           const pad = 62 * view.s;
           const pts = [lay.pos.get(g.id)!, ...own.map((s) => lay.pos.get(s.id)!)];
           pts.forEach((p) => { hctx.beginPath(); hctx.arc(sx(p[0]), sy(p[1]), pad + 6, 0, 7); hctx.fill(); });
           const dim = (ctxGenre && ctxGenre !== g.id && focus) || dimMine(g.id);
-          ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = aS * (dim ? 0.04 : ctxGenre === g.id ? 0.14 : 0.09);
+          ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = aS * (dim ? 0.05 : ctxGenre === g.id ? 0.17 : 0.12);
           ctx.drawImage(hull, 0, 0); ctx.globalAlpha = 1; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
         });
       }
@@ -129,7 +129,7 @@ export function ZoomView(props: Props) {
       mm.genreLinks.forEach(({ a, b, n }) => {
         const pa = lay.pos.get(a); const pb = lay.pos.get(b); if (!pa || !pb) return;
         const al = 0.75 * (1 - aS) * (personal && (!mm.mine.has(a) || !mm.mine.has(b)) ? 0.35 : 1);
-        const q = arrow(sx(pa[0]), sy(pa[1]), sx(pb[0]), sy(pb[1]), 1 + n * 1.1, C.genre, al, gr(a), gr(b));
+        const q = arrow(sx(pa[0]), sy(pa[1]), sx(pb[0]), sy(pb[1]), 1 + n * 1.1, colorOf(a, mm), al, gr(a), gr(b));
         if (q && aS < 0.3) counts.push({ t: String(n), x: (q.ax + q.bx) / 2 * 0.4 + q.mx * 0.6, y: (q.ay + q.by) / 2 * 0.4 + q.my * 0.6 + 4 });
       });
       if (aS > 0) mm.influence.forEach(([a, b]) => {
@@ -137,15 +137,15 @@ export function ZoomView(props: Props) {
         const hot = !!focus && !isGenre(focus) && (a === focus || b === focus);
         const near = !hot && (inCtx(a) || inCtx(b));
         const alpha = focus && !isGenre(focus) ? (hot ? 0.95 : 0.05) : near ? 0.5 : 0.06;
-        arrow(sx(pa[0]), sy(pa[1]), sx(pb[0]), sy(pb[1]), hot ? 2 : 1.2, hot ? C.accent : C.style, aS * alpha * (1 - aA * 0.5), sr(a), sr(b));
+        arrow(sx(pa[0]), sy(pa[1]), sx(pb[0]), sy(pb[1]), hot ? 2 : 1.2, hot ? C.accent : colorOf(a, mm), aS * alpha * (1 - aA * 0.5), sr(a), sr(b));
       });
 
       // genres: circles first, names reserve their room before anything smaller
       mm.genres.forEach((g) => {
         const [x, y] = lay.pos.get(g.id)!; const r = gr(g.id) * (1 - aS * 0.75); const dm = dimMine(g.id);
         ctx.globalAlpha = (g.placeholder ? 0.5 : 1) * (dm ? 0.35 : 1); ctx.beginPath(); ctx.arc(sx(x), sy(y), r, 0, 7);
-        ctx.fillStyle = g.placeholder ? 'rgba(180,87,74,.06)' : `rgba(180,87,74,${0.28 * (1 - aS * 0.55) + 0.04})`; ctx.fill();
-        ctx.setLineDash(g.placeholder ? [4, 4] : []); ctx.strokeStyle = focus === g.id ? C.accent : C.genre; ctx.lineWidth = focus === g.id ? 2.5 : g.placeholder ? 1 : 1.5; ctx.stroke(); ctx.setLineDash([]); ctx.globalAlpha = 1;
+        ctx.fillStyle = g.placeholder ? 'rgba(143,135,123,.06)' : rgba(colorOf(g.id, mm), 0.3 * (1 - aS * 0.55) + 0.05); ctx.fill();
+        ctx.setLineDash(g.placeholder ? [4, 4] : []); ctx.strokeStyle = focus === g.id ? C.accent : g.placeholder ? C.muted : colorOf(g.id, mm); ctx.lineWidth = focus === g.id ? 2.5 : g.placeholder ? 1 : 1.5; ctx.stroke(); ctx.setLineDash([]); ctx.globalAlpha = 1;
       });
       mm.genres.forEach((g) => {
         const [x, y] = lay.pos.get(g.id)!; const r = gr(g.id) * (1 - aS * 0.75); const dm = dimMine(g.id);
@@ -154,7 +154,7 @@ export function ZoomView(props: Props) {
           // the name sits on the top edge of the genre's territory
           const own = mm.styles.filter((s) => s.genres[0] === g.id).map((s) => lay.pos.get(s.id)![1]);
           const top = own.length ? Math.min(y, ...own) : y; const ty = sy(top) - (own.length ? 62 * view.s + 10 : r + 8);
-          text(g.name.toUpperCase(), sx(x), ty, '600 12px Fraunces, Georgia, serif', g.placeholder ? C.muted : C.ink, (g.placeholder ? 0.5 : 0.7) * (dm ? 0.4 : 1), true);
+          text(g.name.toUpperCase(), sx(x), ty, '600 12px Fraunces, Georgia, serif', g.placeholder ? C.muted : colorOf(g.id, mm), (g.placeholder ? 0.5 : 0.7) * (dm ? 0.4 : 1), true);
         } else {
           const size = Math.max(10, Math.min(15, gr(g.id) * 0.42));
           genreLabel(g.name.toUpperCase(), sx(x), sy(y) + 4, size, g.placeholder ? C.muted : C.ink, (g.placeholder ? 0.6 : 1) * (dm ? 0.4 : 1), Math.max(78, r * 2.6));
@@ -172,8 +172,8 @@ export function ZoomView(props: Props) {
           const dim = (!!focus && focus !== s.id && !touches(s.id) && !inCtx(s.id)) || dimMine(s.id);
           const mine = personal && mm.mine.has(s.id);
           ctx.globalAlpha = aS * (dim ? 0.3 : 1); ctx.beginPath(); ctx.arc(sx(p[0]), sy(p[1]), r, 0, 7);
-          ctx.fillStyle = mine ? 'rgba(232,161,58,.45)' : 'rgba(207,143,120,.3)'; ctx.fill();
-          ctx.strokeStyle = focus === s.id ? C.accent : C.style; ctx.lineWidth = focus === s.id ? 2.5 : 1.2;
+          ctx.fillStyle = mine ? 'rgba(232,161,58,.45)' : rgba(colorOf(s.id, mm), 0.32); ctx.fill();
+          ctx.strokeStyle = focus === s.id ? C.accent : colorOf(s.id, mm); ctx.lineWidth = focus === s.id ? 2.5 : 1.2;
           ctx.setLineDash(s.genres.length > 1 ? [3, 2] : []); ctx.stroke(); ctx.setLineDash([]); ctx.globalAlpha = 1;
         });
         order.forEach((s) => {
