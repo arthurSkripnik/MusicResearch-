@@ -1,0 +1,4 @@
+# Converted from inbox/2026-11-W48-radiohead.md (Friday run 27.11). Batch recommendations without reaction stay out.
+{"op":"entity","id":"artist:atoms-for-peace","type":"artist","name":"Atoms For Peace","country":"US","years":{"from":2009},"summary":"Сайд-проєкт Тома Йорка з Flea, Найджелом Годричем, Джоуї Вароньєрою та Мауро Рефоско. Єдиний альбом AMOK (2013) — нервовий афробіт-електронний грув.","confidence":"established","author":"claude"}
+{"op":"relation","type":"influenced","from":"artist:radiohead","to":"artist:atoms-for-peace","why":"Сольний електронний напрям Тома Йорка після The Eraser переріс у гурт.","confidence":"established","author":"claude"}
+{"op":"note","id":"note-2026-11-25-radiohead-afp","date":"2026-11-25","source":"Spotify: Arthur added Atoms For Peace «Before Your Very Eyes...» to «➕ Дослідити» without a like (no words).","reactions":[],"statuses":{"artist:atoms-for-peace":"curious"}}

@@ -410,3 +410,7 @@ kbd { font-family: var(--mono); font-size: 10.5px; border: 1px solid var(--hair-
   .toast { bottom: 76px; }
 }
 @media (min-width: 761px) { .quick .more { display: none; } }
+.rv-zoom { z-index: 3; }
+.rv-scroll { touch-action: pan-x pan-y; }
+.rv-scroll .rv-lanes { position: sticky; left: 0; top: auto; width: 0; height: 0; overflow: visible; }
+.has-panel .rv-zoom { right: 12px; }

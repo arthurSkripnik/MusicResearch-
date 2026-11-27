@@ -1,0 +1,4 @@
+# Explore trip-hop thread. Intake 26.11: ➕ Дослідити + ❤ Flunk «Petrified».
+{"op":"entity","id":"artist:flunk","type":"artist","name":"Flunk","country":"NO","years":{"from":2000},"summary":"Норвезький даунтемпо-гурт з Осло, вокал Anja Øyen Vister. Дебют For Sleepyheads Only (2002) з кавером New Order «Blue Monday»; Petrified — з альбому Chemistry and Math (2017).","confidence":"likely","author":"claude"}
+{"op":"entity","id":"track:petrified-flunk","type":"track","name":"Petrified","confidence":"established","summary":"Flunk, альбом Chemistry and Math (2017).","attrs":{"artist":"artist:flunk"}}
+{"op":"note","id":"note-2026-11-26-trip-hop","date":"2026-11-26","source":"➕ Дослідити і ❤ 26.11: Flunk «Petrified»","reactions":[{"id":"note-2026-11-26-trip-hop-1","target":"track:petrified-flunk","polarity":"positive","scope":"track","text":"Лайкнув Petrified.","origin":"note"}],"statuses":{"track:petrified-flunk":"liked","artist:flunk":"exploring"}}

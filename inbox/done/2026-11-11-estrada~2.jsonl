@@ -1,0 +1,3 @@
+{"op":"entity","id":"artist:vasyl-zinkevych","type":"artist","name":"Vasyl Zinkevych","country":"UA","years":{"from":1970,"approx":true},"summary":"Тенор української естради 70-х, соліст ВІА «Смерічка» поруч із Назарієм Яремчуком; співав пісні Володимира Івасюка."}
+{"op":"relation","type":"in_genre","from":"artist:vasyl-zinkevych","to":"genre:estrada","why":"Українська радянська естрада 70-х на фольклорній основі."}
+{"op":"note","id":"note-2026-11-24-zinkevych","date":"2026-11-24","source":"Spotify: Arthur added Василь Зінкевич «Забудь печаль» (1972) to «➕ Дослідити» (no words).","reactions":[],"statuses":{"artist:vasyl-zinkevych":"curious"}}

@@ -1,0 +1,5 @@
+# Thread "Explore indie and art-pop", 2026-11-25. Arthur: ➕ і лайк Björk — All Is Full Of Love (Family Tree). Björk: 5 лайків за весь час. Його слів немає.
+{"op":"entity","id":"artist:mark-bell","type":"artist","name":"Mark Bell","country":"GB","years":{"from":1988,"to":2014},"summary":"Продюсер із Лідса, половина LFO (Warp). Співпродюсер Homogenic і багаторічний співавтор Björk: «вулканічні» біти під струнними.","confidence":"established","author":"claude"}
+{"op":"relation","type":"member_of","from":"artist:mark-bell","to":"artist:lfo","why":"Засновник LFO разом із Gez Varley."}
+{"op":"relation","type":"collaborated","from":"artist:mark-bell","to":"artist:bjork","why":"Співпродюсер Homogenic (1997), далі Vespertine, Medúlla, Volta."}
+{"op":"note","id":"note-2026-11-25-indie-art-pop","date":"2026-11-25","source":"➕ і лайк 25.11: Björk — All Is Full Of Love (Family Tree)","reactions":[{"id":"note-2026-11-25-indie-art-pop-1","target":"artist:bjork","polarity":"positive","scope":"artist","axes":["texture"],"text":"5-й лайк Björk (Pluto, Bachelorette, Come To Me, Human Behaviour, All Is Full Of Love): найсильніше тягнуть Homogenic і Debut."}]}

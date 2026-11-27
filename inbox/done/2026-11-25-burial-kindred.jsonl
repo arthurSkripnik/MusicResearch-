@@ -1,0 +1,3 @@
+# Тред «Explore Fred again.. and Latin Mafia»: 🔍 розбір Burial — Loner (25.11.2026, ➕ Дослідити + 🔍 Розібрати)
+{"op":"entity","id":"release:kindred-ep","type":"release","name":"Kindred EP","years":{"from":2012},"summary":"EP Burial на Hyperdub (лютий 2012), три довгі треки: Kindred, Loner, Ashtray Wasp. Loner — «кульгавий» house на прямій бочці з порожнистим арпеджіо і тріском (Juno).","confidence":"established","attrs":{"artist":"artist:burial","releaseType":"ep"}}
+{"op":"relation","type":"on_label","from":"release:kindred-ep","to":"label:hyperdub","why":"Вийшов на Hyperdub."}

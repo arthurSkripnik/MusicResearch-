@@ -1,0 +1,13 @@
+{
+  "title": "Explorer · Brazil",
+  "center": "Brasil",
+  "groups": [
+    { "node": "bossa nova", "artists": ["João Gilberto", "Tom Jobim", "Nara Leão"] },
+    { "node": "samba", "artists": ["Cartola", "Paulinho da Viola"] },
+    { "node": "samba-rock", "artists": ["Jorge Ben Jor"] },
+    { "node": "Tropicália", "kind": "scene", "artists": ["Caetano Veloso"] },
+    { "node": "MPB", "artists": ["Elis Regina", "Marcos Valle"] }
+  ],
+  "links": [["samba", "bossa nova"], ["bossa nova", "MPB"], ["samba", "samba-rock"], ["Tropicália", "MPB"]],
+  "hue": 80
+}

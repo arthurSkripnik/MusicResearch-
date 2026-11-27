@@ -19,5 +19,6 @@
 {"id":"city:dallas","type":"city","name":"Dallas","country":"US","summary":"Рідне місто Еріки Баду.","confidence":"established","author":"claude"},
 {"id":"city:philadelphia","type":"city","name":"Philadelphia","country":"US","summary":"Місто The Roots, Questlove і Джеймса Пойзера.","confidence":"established","author":"claude"},
 {"id":"city:mexico-city","type":"city","name":"Mexico City","country":"MX","confidence":"established","author":"claude","summary":"База LATIN MAFIA; тут же дописали 9 months & 50 hours під час 50-годинного стріму."},
-{"confidence":"established","author":"claude","id":"city:rio-de-janeiro","type":"city","name":"Rio de Janeiro","country":"BR","summary":"Місто самби, босанови й funk carioca."}
+{"confidence":"established","author":"claude","id":"city:rio-de-janeiro","type":"city","name":"Rio de Janeiro","country":"BR","summary":"Місто самби, босанови й funk carioca."},
+{"confidence":"established","author":"claude","id":"city:paris","type":"city","name":"Paris","country":"FR"}
 ]

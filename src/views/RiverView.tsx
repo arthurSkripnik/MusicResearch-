@@ -1,17 +1,64 @@
 // "Ріка": years run left to right, each genre has its lane, a style sits where it was born,
 // arcs show who shaped whom. Tapping a style opens its card.
-import { useEffect, useMemo, useRef } from 'react';
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import type { Snapshot } from '../lib/repository';
 import { viewModel, riverYear, colorOf, rgba } from '../lib/views';
 
-const Y0 = 1950; const Y1 = 2026; const PX = 17; const LH = 68; const LEFT = 70; const MID = LH / 2 + 7;
-const rx = (y: number) => (y < Y0 ? LEFT - 34 : LEFT + (y - Y0) * PX);
+const Y0 = 1950; const Y1 = 2026; const PX0 = 17; const LH0 = 68; const LEFT = 70;
+const ZMIN = 0.7; const ZMAX = 6;
 
 interface Props { snap: Snapshot; selected: string | null; personal: boolean; onSelect(id: string): void; onBackground(): void }
 
 export function RiverView({ snap, selected, personal, onSelect, onBackground }: Props) {
   const m = viewModel(snap);
   const scroller = useRef<HTMLDivElement>(null);
+  // zoom: the wheel (or a pinch) stretches the years apart and gives each lane more height, so crowded styles separate
+  const [z, setZ] = useState(1);
+  const PX = PX0 * z; const LH = Math.round(LH0 * Math.min(2.2, Math.sqrt(z))); const MID = LH / 2 + 7; const ST = 14 * Math.min(2.2, Math.sqrt(z));
+  const rx = (y: number) => (y < Y0 ? LEFT - 34 : LEFT + (y - Y0) * PX);
+  const anchor = useRef<{ x: number; y: number; fx: number; fy: number } | null>(null);
+  const zoomAt = (f: number, cx: number, cy: number) => {
+    const el = scroller.current; if (!el) return;
+    setZ((old) => {
+      const nz = Math.max(ZMIN, Math.min(ZMAX, old * f)); if (nz === old) return old;
+      const oldLH = Math.round(LH0 * Math.min(2.2, Math.sqrt(old))); const newLH = Math.round(LH0 * Math.min(2.2, Math.sqrt(nz)));
+      // keep the point under the cursor in place
+      const wx = el.scrollLeft + cx; const wy = el.scrollTop + cy;
+      anchor.current = { x: LEFT + (wx - LEFT) * (nz / old), y: wy * (newLH / oldLH), fx: cx, fy: cy };
+      return nz;
+    });
+  };
+  useLayoutEffect(() => {
+    const el = scroller.current; const a = anchor.current; if (!el || !a) return;
+    el.scrollLeft = a.x - a.fx; el.scrollTop = a.y - a.fy; anchor.current = null;
+  }, [z]);
+  useEffect(() => {
+    const el = scroller.current; if (!el) return;
+    const wheel = (e: WheelEvent) => {
+      // a sideways swipe still scrolls through the years; an up/down wheel or a trackpad pinch zooms
+      if (Math.abs(e.deltaX) > Math.abs(e.deltaY) || e.shiftKey) return;
+      e.preventDefault(); const r = el.getBoundingClientRect();
+      zoomAt(Math.exp(-e.deltaY * (e.ctrlKey ? 0.01 : 0.0015)), e.clientX - r.left, e.clientY - r.top);
+    };
+    let pinch: number | null = null;
+    const dist = (t: TouchList) => Math.hypot(t[0].clientX - t[1].clientX, t[0].clientY - t[1].clientY);
+    const tstart = (e: TouchEvent) => { if (e.touches.length === 2) pinch = dist(e.touches); };
+    const tmove = (e: TouchEvent) => {
+      if (e.touches.length !== 2 || !pinch) return;
+      e.preventDefault(); const d = dist(e.touches); const r = el.getBoundingClientRect();
+      zoomAt(d / pinch, (e.touches[0].clientX + e.touches[1].clientX) / 2 - r.left, (e.touches[0].clientY + e.touches[1].clientY) / 2 - r.top);
+      pinch = d;
+    };
+    const tend = (e: TouchEvent) => { if (e.touches.length < 2) pinch = null; };
+    el.addEventListener('wheel', wheel, { passive: false });
+    el.addEventListener('touchstart', tstart, { passive: true }); el.addEventListener('touchmove', tmove, { passive: false });
+    el.addEventListener('touchend', tend); el.addEventListener('touchcancel', tend);
+    return () => {
+      el.removeEventListener('wheel', wheel); el.removeEventListener('touchstart', tstart); el.removeEventListener('touchmove', tmove);
+      el.removeEventListener('touchend', tend); el.removeEventListener('touchcancel', tend);
+    };
+  }, []);
+  const zoomBtn = (f: number) => { const el = scroller.current; if (el) zoomAt(f, el.clientWidth / 2, el.clientHeight / 2); };
   // lanes: genres that have styles, the busiest in the middle of the reading order is not needed — keep the map's west→east order
   const lanes = useMemo(() => {
     const order = ['genre:jazz', 'genre:funk-soul', 'genre:latin', 'genre:reggae', 'genre:hip-hop', 'genre:electronic', 'genre:pop', 'genre:rock', 'genre:folk-world-country'];
@@ -25,7 +72,7 @@ export function RiverView({ snap, selected, personal, onSelect, onBackground }: 
       const lane = lanes.indexOf(s.genres.find((g) => lanes.includes(g)) ?? '');
       if (lane < 0) return;
       const k = (per.get(lane) ?? 0) + 1; per.set(lane, k);
-      p.set(s.id, { x: rx(y), y: lane * LH + MID + ((k % 3) - 1) * 14, lane, approx });
+      p.set(s.id, { x: rx(y), y: lane * LH + MID + ((k % 3) - 1) * ST, lane, approx });
     });
     // a genre that takes part in an influence itself sits at its own birth year (or its earliest style)
     lanes.forEach((g, i) => {
@@ -33,11 +80,11 @@ export function RiverView({ snap, selected, personal, onSelect, onBackground }: 
       const own = snap.entities.get(g)?.years?.from;
       const first = Math.min(...m.styles.filter((s) => s.genres.includes(g) && s.year).map((s) => s.year!));
       const y = own ?? (Number.isFinite(first) ? first - 3 : Y0 - 1);
-      p.set(g, { x: rx(y), y: i * LH + 24, lane: i, approx: !own });
+      p.set(g, { x: rx(y), y: i * LH + 24 * Math.min(1.6, LH / LH0), lane: i, approx: !own });
     });
     return p;
-  }, [m, lanes, snap]);
-  const W = LEFT + (Y1 - Y0) * PX + 140; const H = lanes.length * LH + 30;
+  }, [m, lanes, snap, z]);
+  const W = LEFT + (Y1 - Y0) * PX + 160; const H = lanes.length * LH + 30;
   const sel = selected && pos.has(selected) ? selected : null;
   const touches = (id: string) => m.influence.some(([a, b]) => (a === sel && b === id) || (b === sel && a === id));
   // labels that would run into one already placed stay hidden (their dot keeps a tooltip); the selection and its links always show
@@ -62,8 +109,8 @@ export function RiverView({ snap, selected, personal, onSelect, onBackground }: 
 
   return (
     <div className="river">
-      <div className="rv-lanes">{lanes.map((g, i) => <button key={g} style={{ top: i * LH + 3, color: colorOf(g, m) }} onClick={() => onSelect(g)}>{snap.entities.get(g)?.name}</button>)}</div>
       <div className="rv-scroll" ref={scroller} onClick={(e) => { if ((e.target as Element).tagName === 'svg') onBackground(); }}>
+        <div className="rv-lanes">{lanes.map((g, i) => <button key={g} style={{ top: i * LH + 3, color: colorOf(g, m) }} onClick={() => onSelect(g)}>{snap.entities.get(g)?.name}</button>)}</div>
         <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Ріка: стилі за роками і впливи між ними">
           <defs>
             <marker id="rv-ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e8a13a" /></marker>
@@ -73,8 +120,8 @@ export function RiverView({ snap, selected, personal, onSelect, onBackground }: 
             <rect x={0} y={i * LH} width={W} height={LH} fill={rgba(colorOf(g, m), 0.045)} />
             <line x1={0} x2={W} y1={(i + 1) * LH} y2={(i + 1) * LH} stroke="rgba(236,230,220,.08)" />
           </g>)}
-          {Array.from({ length: 8 }, (_, i) => 1950 + i * 10).map((y) => <g key={y}>
-            <line x1={rx(y)} x2={rx(y)} y1={0} y2={lanes.length * LH} stroke="rgba(236,230,220,.07)" />
+          {Array.from({ length: Math.floor((Y1 - Y0) / (z >= 2.5 ? 5 : 10)) + 1 }, (_, i) => Y0 + i * (z >= 2.5 ? 5 : 10)).map((y) => <g key={y}>
+            <line x1={rx(y)} x2={rx(y)} y1={0} y2={lanes.length * LH} stroke={`rgba(236,230,220,${y % 10 ? 0.035 : 0.07})`} />
             <text x={rx(y)} y={H - 10} className="rv-year">{y}</text>
           </g>)}
           <text x={LEFT - 34} y={H - 10} className="rv-year">раніше</text>
@@ -111,6 +158,10 @@ export function RiverView({ snap, selected, personal, onSelect, onBackground }: 
             </g>;
           })}
         </svg>
+      </div>
+      <div className="zv-bar rv-zoom">
+        <button aria-label="Наблизити" onClick={() => zoomBtn(1.5)}>+</button>
+        <button aria-label="Віддалити" onClick={() => zoomBtn(1 / 1.5)}>−</button>
       </div>
     </div>
   );
